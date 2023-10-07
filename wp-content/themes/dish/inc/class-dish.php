@@ -32,6 +32,9 @@ if ( ! class_exists( 'Dish' ) ) :
 			add_filter( 'wp_page_menu_args', array( $this, 'page_menu_args' ) );
 			add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ) );
 			add_action( 'enqueue_embed_scripts', array( $this, 'print_embed_styles' ) );
+
+            //Now add test class to the filter
+            add_action( 'body_class', array( $this, 'body_class_adds' ) );
 		}
 
 		/**
@@ -94,7 +97,7 @@ if ( ! class_exists( 'Dish' ) ) :
 					array(
 						'primary'   => __( 'Primary Menu', 'dish' ),
 						'secondary' => __( 'Secondary Menu', 'dish' ),
-						'handheld'  => __( 'Handheld Menu', 'dish' ),
+						//'handheld'  => __( 'Handheld Menu', 'dish' ),
 					)
 				)
 			);
@@ -109,8 +112,8 @@ if ( ! class_exists( 'Dish' ) ) :
 					'dish_html5_args',
 					array(
 						'search-form',
-						'comment-form',
-						'comment-list',
+						//'comment-form',
+						//'comment-list',
 						'gallery',
 						'caption',
 						'widgets',
@@ -258,6 +261,12 @@ if ( ! class_exists( 'Dish' ) ) :
 			$sidebar_args['sidebar'] = array(
 				'name'        => __( 'Sidebar', 'dish' ),
 				'id'          => 'sidebar-1',
+				'description' => '',
+			);
+
+            $sidebar_args['sidebar-recipes'] = array(
+				'name'        => __( 'Sidebar Recipes', 'dish' ),
+				'id'          => 'sidebar-2',
 				'description' => '',
 			);
 
@@ -490,6 +499,15 @@ if ( ! class_exists( 'Dish' ) ) :
 
 			return $classes;
 		}
+
+        public function body_class_adds($classes) {
+            // add 'class-name' to the $classes array
+            $classes[] = 'hfeed site';
+            // return the $classes array
+            return $classes;
+        }
+          
+        
 
 		/**
 		 * Custom navigation markup template hooked into `navigation_markup_template` filter hook.

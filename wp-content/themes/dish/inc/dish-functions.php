@@ -224,3 +224,38 @@ function dish_sanitize_choices( $input, $setting ) {
 function dish_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
+
+/**
+ * CF 7 - version 5.4.1 
+ * Load JS & CSS only when necessary
+ * 
+ * Use WP functions '__return_true', '__return_false' to load the
+ * necessary files. The 'is_page()' should be called after the init
+ * hook and the js+css must be enqueued before the wp_head hook.
+ * 
+ */
+ 
+ add_filter( 'wpcf7_load_js', '__return_false' );
+ add_filter( 'wpcf7_load_css', '__return_false' );
+ 
+ function fm_cf7_activate_scripts() {
+     if (is_page('contact-us') || is_page('waiting-list') || is_singular( array( 'cd', 'book' ) )) {
+         add_filter( 'wpcf7_load_js', '__return_true' );
+         // add_filter( 'wpcf7_load_css', '__return_true' );
+     }
+ }
+ 
+add_action( 'get_header', 'fm_cf7_activate_scripts', 20 );
+
+
+add_filter('after_setup_theme', 'remove_redundant_shortlink');
+
+function remove_redundant_shortlink() {
+    // remove HTML meta tag
+    // <link rel='shortlink' href='http://example.com/?p=25' />
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+
+    // remove HTTP header
+    // Link: <https://example.com/?p=25>; rel=shortlink
+    remove_action( 'template_redirect', 'wp_shortlink_header', 11);
+}

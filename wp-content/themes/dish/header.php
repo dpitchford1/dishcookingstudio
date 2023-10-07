@@ -22,21 +22,19 @@
 <meta name="CCBot" content="nofollow">
 <?php if ( is_front_page() ) : ?><link rel="home" title="Home page" href="/"><?php endif ?>
 
+<link rel="stylesheet" href="/assets/css/resources/style.css" media="all">
+<link rel="stylesheet" href="/assets/css/resources/customizer.min.css" media="all">
+<link rel="stylesheet" href="/assets/css/resources/plugins.min.css" media="all">
 <?php wp_head(); ?>
+
 </head>
 <?php flush(); ?>
 
 <body <?php body_class(); ?> data-off-screen="hidden" id="page-body" data-theme="dark">
-
 <?php wp_body_open(); ?>
-
 <?php do_action( 'dish_before_site' ); ?>
-
-<div id="page" class="hfeed site">
 	<?php do_action( 'dish_before_header' ); ?>
-
 	<header id="masthead" class="site-header" role="banner" style="<?php dish_header_styles(); ?>">
-
 		<?php
 		/**
 		 * Functions hooked into dish_header action
@@ -55,9 +53,7 @@
 		 */
 		do_action( 'dish_header' );
 		?>
-
 	</header><!-- #masthead -->
-
 	<?php
 	/**
 	 * Functions hooked in to dish_before_content
@@ -67,7 +63,6 @@
 	 */
 	do_action( 'dish_before_content' );
 	?>
-
 	<div id="content" class="site-content" tabindex="-1">
 		<div class="col-full">
 
