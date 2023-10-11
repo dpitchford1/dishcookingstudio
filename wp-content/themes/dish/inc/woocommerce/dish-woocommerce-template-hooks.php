@@ -54,7 +54,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 add_action( 'woocommerce_before_shop_loop', 'dish_woocommerce_pagination', 30 );
 add_action( 'woocommerce_before_shop_loop', 'dish_sorting_wrapper_close', 31 );
 
-add_action( 'dish_footer', 'dish_handheld_footer_bar', 999 );
+//add_action( 'dish_footer', 'dish_handheld_footer_bar', 999 );
 
 /**
  * Products
@@ -81,7 +81,7 @@ add_action( 'dish_after_footer', 'dish_sticky_single_add_to_cart', 999 );
  * @see dish_product_search()
  * @see dish_header_cart()
  */
-add_action( 'dish_header', 'dish_product_search', 40 );
+//add_action( 'dish_header', 'dish_product_search', 40 );
 add_action( 'dish_header', 'dish_header_cart', 60 );
 
 /**

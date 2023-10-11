@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="/assets/css/resources/customizer.min.css" media="all">
 <link rel="stylesheet" href="/assets/css/resources/plugins.min.css" media="all">
 <?php wp_head(); ?>
-
+<link rel="stylesheet" href="/assets/css/resources/store.min.css" media="all">
 </head>
 <?php flush(); ?>
 

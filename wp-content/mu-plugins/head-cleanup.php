@@ -38,7 +38,7 @@ if ( ! class_exists( 'cleanup' ) ) :
             add_action( 'wp_enqueue_scripts', array( $this, 'general_css_cleanup' ), 20 );
             add_action( 'wp_enqueue_scripts', array( $this, 'plugins_cleanup' ), 20 );
 
-            // add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_cleanup' ), 20 );
+            add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_cleanup' ), 20 );
             // add_action( 'wp_enqueue_scripts', array( $this, 'events_cleanup' ), 20 );
 
 		}
@@ -208,7 +208,7 @@ public function plugins_cleanup() {
  * Woocommerce Cleanup
  */
 public function woocommerce_cleanup() {
-    wp_dequeue_style( 'select2' );
+    //wp_dequeue_style( 'select2' );
 
     // vendors and wc-blocks
     wp_deregister_style( 'wc-blocks-style' );
@@ -232,8 +232,8 @@ public function woocommerce_cleanup() {
     wp_deregister_style( 'dish-gutenberg-blocks' );
     wp_dequeue_style( 'dish-gutenberg-blocks' );
 
-    wp_deregister_style( 'woocommerce-smallscreen' );
-    wp_dequeue_style( 'woocommerce-smallscreen' );
+    // wp_deregister_style( 'woocommerce-smallscreen' );
+    // wp_dequeue_style( 'woocommerce-smallscreen' );
 }
 
 /**

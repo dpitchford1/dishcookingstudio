@@ -26,8 +26,8 @@ if ( ! class_exists( 'Dish' ) ) :
 			add_action( 'after_setup_theme', array( $this, 'setup' ) );
 			add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 10 );
-			add_action( 'wp_enqueue_scripts', array( $this, 'child_scripts' ), 30 ); // After WooCommerce.
-			add_action( 'enqueue_block_assets', array( $this, 'block_assets' ) );
+			//add_action( 'wp_enqueue_scripts', array( $this, 'child_scripts' ), 30 ); // After WooCommerce.
+			//add_action( 'enqueue_block_assets', array( $this, 'block_assets' ) );
 			add_filter( 'body_class', array( $this, 'body_classes' ) );
 			add_filter( 'wp_page_menu_args', array( $this, 'page_menu_args' ) );
 			add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ) );
@@ -131,7 +131,7 @@ if ( ! class_exists( 'Dish' ) ) :
 				apply_filters(
 					'dish_custom_background_args',
 					array(
-						'default-color' => apply_filters( 'dish_default_background_color', 'ffffff' ),
+						//'default-color' => apply_filters( 'dish_default_background_color', 'ffffff' ),
 						'default-image' => '',
 					)
 				)
@@ -183,7 +183,7 @@ if ( ! class_exists( 'Dish' ) ) :
 			/**
 			 * Add support for Block Styles.
 			 */
-			add_theme_support( 'wp-block-styles' );
+			//add_theme_support( 'wp-block-styles' );
 
 			/**
 			 * Add support for full and wide align images.
@@ -232,7 +232,7 @@ if ( ! class_exists( 'Dish' ) ) :
 			/**
 			 * Enqueue editor styles.
 			 */
-			add_editor_style( array( 'assets/css/base/gutenberg-editor.css', $this->google_fonts() ) );
+			//add_editor_style( array( 'assets/css/base/gutenberg-editor.css', $this->google_fonts() ) );
 
 			/**
 			 * Add support for responsive embedded content.
@@ -266,6 +266,18 @@ if ( ! class_exists( 'Dish' ) ) :
 
             $sidebar_args['sidebar-recipes'] = array(
 				'name'        => __( 'Sidebar Recipes', 'dish' ),
+				'id'          => 'sidebar-2',
+				'description' => '',
+			);
+
+            $sidebar_args['sidebar-recipes'] = array(
+				'name'        => __( 'Sidebar Events', 'dish' ),
+				'id'          => 'sidebar-2',
+				'description' => '',
+			);
+
+            $sidebar_args['sidebar-recipes'] = array(
+				'name'        => __( 'Sidebar Private', 'dish' ),
 				'id'          => 'sidebar-2',
 				'description' => '',
 			);
@@ -348,15 +360,15 @@ if ( ! class_exists( 'Dish' ) ) :
 			 * Styles
 			 */
 			wp_enqueue_style( 'dish-style', get_template_directory_uri() . '/style.css', '', $dish_version );
-			wp_style_add_data( 'dish-style', 'rtl', 'replace' );
+			//wp_style_add_data( 'dish-style', 'rtl', 'replace' );
 
 			wp_enqueue_style( 'dish-icons', get_template_directory_uri() . '/assets/css/base/icons.css', '', $dish_version );
-			wp_style_add_data( 'dish-icons', 'rtl', 'replace' );
+			//wp_style_add_data( 'dish-icons', 'rtl', 'replace' );
 
 			/**
 			 * Fonts
 			 */
-			wp_enqueue_style( 'dish-fonts', $this->google_fonts(), array(), $dish_version );
+			//wp_enqueue_style( 'dish-fonts', $this->google_fonts(), array(), $dish_version );
 
 			/**
 			 * Scripts
@@ -380,9 +392,9 @@ if ( ! class_exists( 'Dish' ) ) :
 				wp_enqueue_script( 'dish-homepage', get_template_directory_uri() . '/assets/js/homepage' . $suffix . '.js', array(), $dish_version, true );
 			}
 
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-				wp_enqueue_script( 'comment-reply' );
-			}
+			// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			// 	wp_enqueue_script( 'comment-reply' );
+			// }
 		}
 
 		/**
@@ -391,36 +403,36 @@ if ( ! class_exists( 'Dish' ) ) :
 		 * @since 2.4.0
 		 * @return string Google fonts URL for the theme.
 		 */
-		public function google_fonts() {
-			$google_fonts = apply_filters(
-				'dish_google_font_families',
-				array(
-					'source-sans-pro' => 'Source+Sans+Pro:400,300,300italic,400italic,600,700,900',
-				)
-			);
+		// public function google_fonts() {
+		// 	$google_fonts = apply_filters(
+		// 		'dish_google_font_families',
+		// 		array(
+		// 			'source-sans-pro' => 'Source+Sans+Pro:400,300,300italic,400italic,600,700,900',
+		// 		)
+		// 	);
 
-			$query_args = array(
-				'family' => implode( '|', $google_fonts ),
-				'subset' => rawurlencode( 'latin,latin-ext' ),
-			);
+		// 	$query_args = array(
+		// 		'family' => implode( '|', $google_fonts ),
+		// 		'subset' => rawurlencode( 'latin,latin-ext' ),
+		// 	);
 
-			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		// 	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
-			return $fonts_url;
-		}
+		// 	return $fonts_url;
+		// }
 
 		/**
 		 * Enqueue block assets.
 		 *
 		 * @since 2.5.0
 		 */
-		public function block_assets() {
-			global $dish_version;
+		// public function block_assets() {
+		// 	global $dish_version;
 
-			// Styles.
-			wp_enqueue_style( 'dish-gutenberg-blocks', get_template_directory_uri() . '/assets/css/base/gutenberg-blocks.css', '', $dish_version );
-			wp_style_add_data( 'dish-gutenberg-blocks', 'rtl', 'replace' );
-		}
+		// 	// Styles.
+		// 	wp_enqueue_style( 'dish-gutenberg-blocks', get_template_directory_uri() . '/assets/css/base/gutenberg-blocks.css', '', $dish_version );
+		// 	wp_style_add_data( 'dish-gutenberg-blocks', 'rtl', 'replace' );
+		// }
 
 		/**
 		 * Enqueue child theme stylesheet.
@@ -429,12 +441,12 @@ if ( ! class_exists( 'Dish' ) ) :
 		 *
 		 * @since  1.5.3
 		 */
-		public function child_scripts() {
-			if ( is_child_theme() ) {
-				$child_theme = wp_get_theme( get_stylesheet() );
-				wp_enqueue_style( 'dish-child-style', get_stylesheet_uri(), array(), $child_theme->get( 'Version' ) );
-			}
-		}
+		// public function child_scripts() {
+		// 	if ( is_child_theme() ) {
+		// 		$child_theme = wp_get_theme( get_stylesheet() );
+		// 		wp_enqueue_style( 'dish-child-style', get_stylesheet_uri(), array(), $child_theme->get( 'Version' ) );
+		// 	}
+		// }
 
 		/**
 		 * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -471,11 +483,11 @@ if ( ! class_exists( 'Dish' ) ) :
 			 * Take the blue pill, close this file and forget you saw the following code.
 			 * Or take the red pill, filter dish_make_me_cute and see how deep the rabbit hole goes...
 			 */
-			$cute = apply_filters( 'dish_make_me_cute', false );
+			// $cute = apply_filters( 'dish_make_me_cute', false );
 
-			if ( true === $cute ) {
-				$classes[] = 'dish-cute';
-			}
+			// if ( true === $cute ) {
+			// 	$classes[] = 'dish-cute';
+			// }
 
 			// If our main sidebar doesn't contain widgets, adjust the layout to be full-width.
 			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -500,6 +512,9 @@ if ( ! class_exists( 'Dish' ) ) :
 			return $classes;
 		}
 
+        /**
+		 * remove site useless site wrapper, add css classes to body
+		 */
         public function body_class_adds($classes) {
             // add 'class-name' to the $classes array
             $classes[] = 'hfeed site';
@@ -527,7 +542,7 @@ if ( ! class_exists( 'Dish' ) ) :
 		public function print_embed_styles() {
 			global $dish_version;
 
-			wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $dish_version );
+			//wp_enqueue_style( 'source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900', array(), $dish_version );
 			$accent_color     = get_theme_mod( 'dish_accent_color' );
 			$background_color = dish_get_content_background_color();
 			?>

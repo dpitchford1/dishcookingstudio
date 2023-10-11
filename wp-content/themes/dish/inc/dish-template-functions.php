@@ -137,13 +137,13 @@ if ( ! function_exists( 'dish_credit' ) ) {
 	function dish_credit() {
 		$links_output = '';
 
-		if ( apply_filters( 'dish_credit_link', true ) ) {
-			if ( dish_is_woocommerce_activated() ) {
-				$links_output .= '<a href="https://woocommerce.com" target="_blank" title="' . esc_attr__( 'WooCommerce - The Best eCommerce Platform for WordPress', 'dish' ) . '" rel="noreferrer nofollow">' . esc_html__( 'Built with Dish &amp; WooCommerce', 'dish' ) . '</a>.';
-			} else {
-				$links_output .= '<a href="https://woocommerce.com/products/dish/" target="_blank" title="' . esc_attr__( 'Dish -  The perfect platform for your next WooCommerce project.', 'dish' ) . '" rel="noreferrer nofollow">' . esc_html__( 'Built with Dish', 'dish' ) . '</a>.';
-			}
-		}
+		// if ( apply_filters( 'dish_credit_link', true ) ) {
+		// 	if ( dish_is_woocommerce_activated() ) {
+		// 		$links_output .= '<a href="https://woocommerce.com" target="_blank" title="' . esc_attr__( 'WooCommerce - The Best eCommerce Platform for WordPress', 'dish' ) . '" rel="noreferrer nofollow">' . esc_html__( 'Built with Dish &amp; WooCommerce', 'dish' ) . '</a>.';
+		// 	} else {
+		// 		$links_output .= '<a href="https://woocommerce.com/products/dish/" target="_blank" title="' . esc_attr__( 'Dish -  The perfect platform for your next WooCommerce project.', 'dish' ) . '" rel="noreferrer nofollow">' . esc_html__( 'Built with Dish', 'dish' ) . '</a>.';
+		// 	}
+		// }
 
 		if ( apply_filters( 'dish_privacy_policy_link', true ) && function_exists( 'the_privacy_policy_link' ) ) {
 			$separator    = '<span role="separator" aria-hidden="true"></span>';

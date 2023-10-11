@@ -81,7 +81,7 @@ add_action( 'dish_post_content_before', 'dish_post_thumbnail', 10 );
 add_action( 'dish_page', 'dish_page_header', 10 );
 add_action( 'dish_page', 'dish_page_content', 20 );
 add_action( 'dish_page', 'dish_edit_post_link', 30 );
-add_action( 'dish_page_after', 'dish_display_comments', 10 );
+//add_action( 'dish_page_after', 'dish_display_comments', 10 );
 
 /**
  * Homepage Page Template
