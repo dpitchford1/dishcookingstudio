@@ -1,0 +1,667 @@
+{
+    "key": "group_652d4ebc01ba9",
+    "title": "Recipe Data",
+    "fields": [
+        {
+            "key": "field_652d5526ff193",
+            "label": "Overview",
+            "name": "overview",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_652d5fca1b7be",
+                    "label": "Cook Time",
+                    "name": "cook_time",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_652d5fea1b7bf",
+                            "label": "Time",
+                            "name": "time",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "PT",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_652d60041b7c0",
+                            "label": "Length",
+                            "name": "length",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Seconds": "Seconds",
+                                "Minutes": "Minutes",
+                                "Hour": "Hour",
+                                "Hours": "Hours",
+                                "Day": "Day",
+                                "Days": "Days"
+                            },
+                            "default_value": "Minutes",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_652d6061bdcaf",
+                    "label": "Prep Time",
+                    "name": "prep_time",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_652d6061bdcb0",
+                            "label": "Time",
+                            "name": "time",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "PT",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_652d6061bdcb1",
+                            "label": "Length",
+                            "name": "length",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Seconds": "Seconds",
+                                "Minutes": "Minutes",
+                                "Hour": "Hour",
+                                "Hours": "Hours",
+                                "Day": "Day",
+                                "Days": "Days"
+                            },
+                            "default_value": "Minutes",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_652d60a021809",
+                    "label": "Total Time",
+                    "name": "total_time",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_652d60a02180a",
+                            "label": "Time",
+                            "name": "time",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "PT",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_652d60a02180b",
+                            "label": "Length",
+                            "name": "length",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Seconds": "Seconds",
+                                "Minutes": "Minutes",
+                                "Hour": "Hour",
+                                "Hours": "Hours",
+                                "Day": "Day",
+                                "Days": "Days"
+                            },
+                            "default_value": "Minutes",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_652d60e9344d5",
+                    "label": "Yield",
+                    "name": "yield",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "10",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 1,
+                    "max": 24,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_652d6127344d6",
+                    "label": "Difficulty",
+                    "name": "difficulty",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Easy": "Easy",
+                        "Medium": "Medium",
+                        "Hard": "Hard",
+                        "Master Chef": "Master Chef"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_652d5587a949e",
+            "label": "Ingredients",
+            "name": "ingredients",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Ingredient Group",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_652d723786e70",
+                    "label": "Ingredient Group Heading",
+                    "name": "ingredient_group_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Heading for a grouping of ingredients. Ex. For the Chicken\r\nLeave blank if there are no Groups",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_652d5587a949e"
+                },
+                {
+                    "key": "field_652d729886e71",
+                    "label": "Ingredient Group",
+                    "name": "ingredient_group",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_652d730386e73",
+                    "button_label": "Add Ingredient",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_652d5587a949e",
+                    "sub_fields": [
+                        {
+                            "key": "field_652d72ea86e72",
+                            "label": "Quantity",
+                            "name": "quantity",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "10",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_652d729886e71"
+                        },
+                        {
+                            "key": "field_652d730386e73",
+                            "label": "Unit",
+                            "name": "unit",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "10",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "g": "g",
+                                "kg": "kg",
+                                "mg": "mg",
+                                "oz": "oz",
+                                "fl oz": "fl oz",
+                                "cup": "cup",
+                                "cups": "cups",
+                                "tsp": "tsp",
+                                "tbsp": "tbsp",
+                                "ml": "ml",
+                                "l": "l",
+                                "stick": "stick",
+                                "sticks": "sticks",
+                                "lbs": "lbs",
+                                "dash": "dash",
+                                "dashes": "dashes",
+                                "drop": "drop",
+                                "drops": "drops",
+                                "gal": "gal",
+                                "gals": "gals",
+                                "pinch": "pinch",
+                                "pinches": "pinches",
+                                "pt": "pt",
+                                "qt": "qt",
+                                "qts": "qts",
+                                "bottle": "bottle",
+                                "bottles": "bottles",
+                                "clove": "clove",
+                                "cloves": "cloves",
+                                "bunch": "bunch",
+                                "bunches": "bunches",
+                                "sprig": "sprig",
+                                "sprigs": "sprigs",
+                                "rib": "rib",
+                                "ribs": "ribs",
+                                "small": "small",
+                                "medium": "medium",
+                                "large": "large",
+                                "whole": "whole",
+                                "full": "full"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_652d729886e71"
+                        },
+                        {
+                            "key": "field_652d734f86e74",
+                            "label": "Ingredient",
+                            "name": "ingredient",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_652d729886e71"
+                        },
+                        {
+                            "key": "field_652d736386e75",
+                            "label": "Note",
+                            "name": "note",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Ex. Finely Chopped",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_652d729886e71"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_652d55d615e8c",
+            "label": "Instructions",
+            "name": "instructions",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Directions Group",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_652d75d048657",
+                    "label": "Directions Group Heading",
+                    "name": "directions_group_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Heading for the Grouping of Instructions. Ex. For the Chicken\r\nLeave blank if there are no Groups",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_652d55d615e8c"
+                },
+                {
+                    "key": "field_652d764548658",
+                    "label": "Directions",
+                    "name": "directions",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Direction",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_652d55d615e8c",
+                    "sub_fields": [
+                        {
+                            "key": "field_652d768948659",
+                            "label": "Direction Item",
+                            "name": "direction_item",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0,
+                            "parent_repeater": "field_652d764548658"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_652d7935ea693",
+                    "label": "Notes",
+                    "name": "notes",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Add any additional notes.. Garnish? Make sure to...?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_652d55d615e8c"
+                }
+            ]
+        },
+        {
+            "key": "field_652d5637db5f1",
+            "label": "Equipment",
+            "name": "equipment",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": []
+        },
+        {
+            "key": "field_652d568bfb3a4",
+            "label": "Related Products",
+            "name": "related_products",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": []
+        },
+        {
+            "key": "field_652d56c1171ef",
+            "label": "Related Events",
+            "name": "related_events",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "recipe"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "discussion",
+        "comments",
+        "revisions",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697508777
+}

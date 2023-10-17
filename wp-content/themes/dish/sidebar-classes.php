@@ -5,11 +5,13 @@
  * @package dish
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-classes' ) ) {
 	return;
 }
 ?>
 
 <div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+    <h3>Classes Sidebars.php</h3>
+    <h4>Coming from admin</h4>
+	<?php dynamic_sidebar( 'sidebar-classes' ); ?>
 </div><!-- #secondary -->

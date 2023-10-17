@@ -259,3 +259,38 @@ function remove_redundant_shortlink() {
     // Link: <https://example.com/?p=25>; rel=shortlink
     remove_action( 'template_redirect', 'wp_shortlink_header', 11);
 }
+
+function example_theme_support() {
+    remove_theme_support( 'widgets-block-editor' );
+}
+add_action( 'after_setup_theme', 'example_theme_support' );
+
+
+
+
+
+
+// function fix_slash( $string, $type )
+// {
+// global $wp_rewrite;
+// if ( $wp_rewrite->use_trailing_slashes == false )
+// {
+//     if ( $type != 'single' && $type != 'category' )
+//         return trailingslashit( $string );
+
+//     if ( $type == 'single' && ( strpos( $string, '.html/' ) !== false ) )
+//         return trailingslashit( $string );
+
+//     if ( $type == 'category' && ( strpos( $string, 'category' ) !== false ) )
+//     {
+//         $aa_g = str_replace( "/category/", "/", $string );
+//         return trailingslashit( $aa_g );
+//     }
+//     if ( $type == 'category' )
+//         return trailingslashit( $string );
+// }
+// return $string;
+// }
+
+// add_filter( 'user_trailingslashit', 'fix_slash', 55, 2 );
+

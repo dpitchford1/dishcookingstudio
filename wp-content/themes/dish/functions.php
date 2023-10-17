@@ -32,6 +32,7 @@ require 'inc/dish-functions.php';
 require 'inc/dish-template-hooks.php';
 require 'inc/dish-template-functions.php';
 require 'inc/wordpress-shims.php';
+require 'inc/template-dev.php';
 
 if ( class_exists( 'Jetpack' ) ) {
 	$dish->jetpack = require 'inc/jetpack/class-dish-jetpack.php';

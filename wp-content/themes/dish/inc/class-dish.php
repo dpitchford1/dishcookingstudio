@@ -63,7 +63,7 @@ if ( ! class_exists( 'Dish' ) ) :
 			/**
 			 * Add default posts and comments RSS feed links to head.
 			 */
-			add_theme_support( 'automatic-feed-links' );
+			//add_theme_support( 'automatic-feed-links' );
 
 			/*
 			 * Enable support for Post Thumbnails on posts and pages.
@@ -75,18 +75,18 @@ if ( ! class_exists( 'Dish' ) ) :
 			/**
 			 * Enable support for site logo.
 			 */
-			add_theme_support(
-				'custom-logo',
-				apply_filters(
-					'dish_custom_logo_args',
-					array(
-						'height'      => 110,
-						'width'       => 470,
-						'flex-width'  => true,
-						'flex-height' => true,
-					)
-				)
-			);
+			// add_theme_support(
+			// 	'custom-logo',
+			// 	apply_filters(
+			// 		'dish_custom_logo_args',
+			// 		array(
+			// 			'height'      => 110,
+			// 			'width'       => 470,
+			// 			'flex-width'  => true,
+			// 			'flex-height' => true,
+			// 		)
+			// 	)
+			// );
 
 			/**
 			 * Register menu locations.
@@ -123,52 +123,54 @@ if ( ! class_exists( 'Dish' ) ) :
 				)
 			);
 
+            
+
 			/**
 			 * Setup the WordPress core custom background feature.
 			 */
-			add_theme_support(
-				'custom-background',
-				apply_filters(
-					'dish_custom_background_args',
-					array(
-						//'default-color' => apply_filters( 'dish_default_background_color', 'ffffff' ),
-						'default-image' => '',
-					)
-				)
-			);
+			// add_theme_support(
+			// 	'custom-background',
+			// 	apply_filters(
+			// 		'dish_custom_background_args',
+			// 		array(
+			// 			//'default-color' => apply_filters( 'dish_default_background_color', 'ffffff' ),
+			// 			'default-image' => '',
+			// 		)
+			// 	)
+			// );
 
 			/**
 			 * Setup the WordPress core custom header feature.
 			 */
-			add_theme_support(
-				'custom-header',
-				apply_filters(
-					'dish_custom_header_args',
-					array(
-						'default-image' => '',
-						'header-text'   => false,
-						'width'         => 1950,
-						'height'        => 500,
-						'flex-width'    => true,
-						'flex-height'   => true,
-					)
-				)
-			);
+			// add_theme_support(
+			// 	'custom-header',
+			// 	apply_filters(
+			// 		'dish_custom_header_args',
+			// 		array(
+			// 			'default-image' => '',
+			// 			'header-text'   => false,
+			// 			'width'         => 1950,
+			// 			'height'        => 500,
+			// 			'flex-width'    => true,
+			// 			'flex-height'   => true,
+			// 		)
+			// 	)
+			// );
 
 			/**
 			 *  Add support for the Site Logo plugin and the site logo functionality in JetPack
 			 *  https://github.com/automattic/site-logo
 			 *  http://jetpack.me/
 			 */
-			add_theme_support(
-				'site-logo',
-				apply_filters(
-					'dish_site_logo_args',
-					array(
-						'size' => 'full',
-					)
-				)
-			);
+			// add_theme_support(
+			// 	'site-logo',
+			// 	apply_filters(
+			// 		'dish_site_logo_args',
+			// 		array(
+			// 			'size' => 'full',
+			// 		)
+			// 	)
+			// );
 
 			/**
 			 * Declare support for title theme feature.
@@ -198,36 +200,36 @@ if ( ! class_exists( 'Dish' ) ) :
 			/**
 			 * Add support for editor font sizes.
 			 */
-			add_theme_support(
-				'editor-font-sizes',
-				array(
-					array(
-						'name' => __( 'Small', 'dish' ),
-						'size' => 14,
-						'slug' => 'small',
-					),
-					array(
-						'name' => __( 'Normal', 'dish' ),
-						'size' => 16,
-						'slug' => 'normal',
-					),
-					array(
-						'name' => __( 'Medium', 'dish' ),
-						'size' => 23,
-						'slug' => 'medium',
-					),
-					array(
-						'name' => __( 'Large', 'dish' ),
-						'size' => 26,
-						'slug' => 'large',
-					),
-					array(
-						'name' => __( 'Huge', 'dish' ),
-						'size' => 37,
-						'slug' => 'huge',
-					),
-				)
-			);
+			// add_theme_support(
+			// 	'editor-font-sizes',
+			// 	array(
+			// 		array(
+			// 			'name' => __( 'Small', 'dish' ),
+			// 			'size' => 14,
+			// 			'slug' => 'small',
+			// 		),
+			// 		array(
+			// 			'name' => __( 'Normal', 'dish' ),
+			// 			'size' => 16,
+			// 			'slug' => 'normal',
+			// 		),
+			// 		array(
+			// 			'name' => __( 'Medium', 'dish' ),
+			// 			'size' => 23,
+			// 			'slug' => 'medium',
+			// 		),
+			// 		array(
+			// 			'name' => __( 'Large', 'dish' ),
+			// 			'size' => 26,
+			// 			'slug' => 'large',
+			// 		),
+			// 		array(
+			// 			'name' => __( 'Huge', 'dish' ),
+			// 			'size' => 37,
+			// 			'slug' => 'huge',
+			// 		),
+			// 	)
+			// );
 
 			/**
 			 * Enqueue editor styles.
@@ -261,32 +263,32 @@ if ( ! class_exists( 'Dish' ) ) :
 			$sidebar_args['sidebar'] = array(
 				'name'        => __( 'Sidebar', 'dish' ),
 				'id'          => 'sidebar-1',
-				'description' => '',
+				'description' => 'General Sidebar',
 			);
 
             $sidebar_args['sidebar-recipes'] = array(
 				'name'        => __( 'Sidebar Recipes', 'dish' ),
-				'id'          => 'sidebar-2',
-				'description' => '',
+				'id'          => 'sidebar-recipes',
+				'description' => 'Sidebar Recipe content here',
 			);
 
-            $sidebar_args['sidebar-recipes'] = array(
-				'name'        => __( 'Sidebar Events', 'dish' ),
-				'id'          => 'sidebar-2',
-				'description' => '',
+            $sidebar_args['sidebar-classes'] = array(
+				'name'        => __( 'Sidebar Classes', 'dish' ),
+				'id'          => 'sidebar-classes',
+				'description' => 'Sidebar Classes content here',
 			);
 
-            $sidebar_args['sidebar-recipes'] = array(
-				'name'        => __( 'Sidebar Private', 'dish' ),
-				'id'          => 'sidebar-2',
-				'description' => '',
+            $sidebar_args['sidebar-private'] = array(
+				'name'        => __( 'Sidebar corporate', 'dish' ),
+				'id'          => 'sidebar-corporate',
+				'description' => 'Sidebar corporate Events content here',
 			);
 
-			$sidebar_args['header'] = array(
-				'name'        => __( 'Below Header', 'dish' ),
-				'id'          => 'header-1',
-				'description' => __( 'Widgets added to this region will appear beneath the header and above the main content.', 'dish' ),
-			);
+			// $sidebar_args['header'] = array(
+			// 	'name'        => __( 'Below Header', 'dish' ),
+			// 	'id'          => 'header-1',
+			// 	'description' => __( 'Widgets added to this region will appear beneath the header and above the main content.', 'dish' ),
+			// );
 
 			$rows    = intval( apply_filters( 'dish_footer_widget_rows', 1 ) );
 			$regions = intval( apply_filters( 'dish_footer_widget_columns', 4 ) );
@@ -359,7 +361,7 @@ if ( ! class_exists( 'Dish' ) ) :
 			/**
 			 * Styles
 			 */
-			wp_enqueue_style( 'dish-style', get_template_directory_uri() . '/style.css', '', $dish_version );
+			//wp_enqueue_style( 'dish-style', get_template_directory_uri() . '/style.css', '', $dish_version );
 			//wp_style_add_data( 'dish-style', 'rtl', 'replace' );
 
 			wp_enqueue_style( 'dish-icons', get_template_directory_uri() . '/assets/css/base/icons.css', '', $dish_version );

@@ -6,10 +6,8 @@
  */
 
 get_header(); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -22,10 +20,20 @@ get_header(); ?>
 
 		endwhile; // End of the loop.
 		?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
-do_action( 'dish_sidebar' );
+    //if single recipe post get recipe sidebar
+    if (is_singular('wprm_recipe')) {
+    ?>
+    <?php get_sidebar( 'recipes' ); ?>
+
+    <?php
+    // if general post get general sidebar
+    } else {
+    ?>
+    <?php get_sidebar( 'dish_sidebar' ); ?>
+<?php } ?>
+<?php
+// do_action( 'dish_sidebar' );
 get_footer();

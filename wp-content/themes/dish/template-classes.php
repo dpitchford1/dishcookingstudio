@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying recipe pages.
+ * The template for displaying event pages.
  *
- * Template Name: Recipes
+ * Template Name: Classes
  *
  * @package dish
  */
@@ -31,7 +31,8 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
-
+	</div><!-- #primary -->   
+    <?php get_sidebar( 'classes' ); ?>
+      
 <?php
 get_footer();

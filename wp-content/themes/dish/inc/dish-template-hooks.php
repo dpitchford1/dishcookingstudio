@@ -67,7 +67,7 @@ add_action( 'dish_single_post', 'dish_post_content', 30 );
 add_action( 'dish_single_post_bottom', 'dish_edit_post_link', 5 );
 add_action( 'dish_single_post_bottom', 'dish_post_taxonomy', 5 );
 add_action( 'dish_single_post_bottom', 'dish_post_nav', 10 );
-add_action( 'dish_single_post_bottom', 'dish_display_comments', 20 );
+//add_action( 'dish_single_post_bottom', 'dish_display_comments', 20 );
 add_action( 'dish_post_header_before', 'dish_post_meta', 10 );
 add_action( 'dish_post_content_before', 'dish_post_thumbnail', 10 );
 

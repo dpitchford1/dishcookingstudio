@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying recipe pages.
+ * The template for displaying event pages.
  *
- * Template Name: Recipes
+ * Template Name: Corporate Classes
  *
  * @package dish
  */
@@ -11,7 +11,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -31,7 +30,8 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
-
+	</div><!-- #primary -->   
+    <?php get_sidebar( 'private' ); ?>
+      
 <?php
 get_footer();
