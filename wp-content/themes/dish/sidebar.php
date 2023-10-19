@@ -9,7 +9,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
-
 <div id="secondary" class="widget-area" role="complementary">
     <h3>Sidebars - sidebars.php</h3>
     <?php

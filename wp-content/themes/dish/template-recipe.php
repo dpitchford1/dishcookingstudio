@@ -12,14 +12,8 @@ get_header(); ?>
 <?php 
     // display the content
     $the_content = apply_filters('the_content', get_the_content());
-
     $recipe = get_field('recipe_data'); // 'recipe_data' is your parent group
-
 ?>
-<?php
-
-?>
-
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
         <section>

@@ -8,29 +8,28 @@
  */
 
 ?>
+    </div><!-- .col-full -->
+</div><!-- #content -->
 
-		</div><!-- .col-full -->
-	</div><!-- #content -->
+<?php do_action( 'dish_before_footer' ); ?>
 
-	<?php do_action( 'dish_before_footer' ); ?>
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="col-full">
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="col-full">
+        <?php
+        /**
+         * Functions hooked in to dish_footer action
+         *
+         * @hooked dish_footer_widgets - 10
+         * @hooked dish_credit         - 20
+         */
+        do_action( 'dish_footer' );
+        ?>
 
-			<?php
-			/**
-			 * Functions hooked in to dish_footer action
-			 *
-			 * @hooked dish_footer_widgets - 10
-			 * @hooked dish_credit         - 20
-			 */
-			do_action( 'dish_footer' );
-			?>
+    </div><!-- .col-full -->
+</footer><!-- #colophon -->
 
-		</div><!-- .col-full -->
-	</footer><!-- #colophon -->
-
-	<?php do_action( 'dish_after_footer' ); ?>
+<?php do_action( 'dish_after_footer' ); ?>
 
 <?php wp_footer(); ?>
 </body>

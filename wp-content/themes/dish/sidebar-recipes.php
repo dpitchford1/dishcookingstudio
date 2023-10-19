@@ -9,7 +9,6 @@ if ( ! is_active_sidebar( 'sidebar-recipes' ) ) {
 	return;
 }
 ?>
-
 <div id="secondary" class="widget-area" role="complementary">
     <h3>Recipes Sidebars.php</h3>
 	<?php dynamic_sidebar( 'sidebar-recipes' ); ?>

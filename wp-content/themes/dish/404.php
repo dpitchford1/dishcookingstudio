@@ -7,79 +7,72 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+        <div class="error-404 not-found">
+            <div class="page-content">
+                <header class="page-header">
+                    <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dish' ); ?></h1>
+                </header><!-- .page-header -->
 
-		<main id="main" class="site-main" role="main">
+                <p><?php esc_html_e( 'Nothing was found at this location. Try searching, or check out the links below.', 'dish' ); ?></p>
 
-			<div class="error-404 not-found">
+                <?php
+                echo '<section aria-label="' . esc_html__( 'Search', 'dish' ) . '">';
 
-				<div class="page-content">
+                if ( dish_is_woocommerce_activated() ) {
+                    the_widget( 'WC_Widget_Product_Search' );
+                } else {
+                    get_search_form();
+                }
 
-					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dish' ); ?></h1>
-					</header><!-- .page-header -->
+                echo '</section>';
 
-					<p><?php esc_html_e( 'Nothing was found at this location. Try searching, or check out the links below.', 'dish' ); ?></p>
+                if ( dish_is_woocommerce_activated() ) {
 
-					<?php
-					echo '<section aria-label="' . esc_html__( 'Search', 'dish' ) . '">';
+                    echo '<div class="fourohfour-columns-2">';
 
-					if ( dish_is_woocommerce_activated() ) {
-						the_widget( 'WC_Widget_Product_Search' );
-					} else {
-						get_search_form();
-					}
+                        echo '<section class="col-1" aria-label="' . esc_html__( 'Promoted Products', 'dish' ) . '">';
 
-					echo '</section>';
+                            dish_promoted_products();
 
-					if ( dish_is_woocommerce_activated() ) {
+                        echo '</section>';
 
-						echo '<div class="fourohfour-columns-2">';
+                        echo '<nav class="col-2" aria-label="' . esc_html__( 'Product Categories', 'dish' ) . '">';
 
-							echo '<section class="col-1" aria-label="' . esc_html__( 'Promoted Products', 'dish' ) . '">';
+                            echo '<h2>' . esc_html__( 'Product Categories', 'dish' ) . '</h2>';
 
-								dish_promoted_products();
+                            the_widget(
+                                'WC_Widget_Product_Categories',
+                                array(
+                                    'count' => 1,
+                                )
+                            );
 
-							echo '</section>';
+                        echo '</nav>';
 
-							echo '<nav class="col-2" aria-label="' . esc_html__( 'Product Categories', 'dish' ) . '">';
+                    echo '</div>';
 
-								echo '<h2>' . esc_html__( 'Product Categories', 'dish' ) . '</h2>';
+                    echo '<section aria-label="' . esc_html__( 'Popular Products', 'dish' ) . '">';
 
-								the_widget(
-									'WC_Widget_Product_Categories',
-									array(
-										'count' => 1,
-									)
-								);
+                        echo '<h2>' . esc_html__( 'Popular Products', 'dish' ) . '</h2>';
 
-							echo '</nav>';
+                        $shortcode_content = dish_do_shortcode(
+                            'best_selling_products',
+                            array(
+                                'per_page' => 4,
+                                'columns'  => 4,
+                            )
+                        );
 
-						echo '</div>';
+                        echo $shortcode_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-						echo '<section aria-label="' . esc_html__( 'Popular Products', 'dish' ) . '">';
-
-							echo '<h2>' . esc_html__( 'Popular Products', 'dish' ) . '</h2>';
-
-							$shortcode_content = dish_do_shortcode(
-								'best_selling_products',
-								array(
-									'per_page' => 4,
-									'columns'  => 4,
-								)
-							);
-
-							echo $shortcode_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
-						echo '</section>';
-					}
-					?>
-
-				</div><!-- .page-content -->
-			</div><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+                    echo '</section>';
+                }
+                ?>
+            </div><!-- .page-content -->
+        </div><!-- .error-404 -->
+    </main><!-- #main -->
+</div><!-- #primary -->
 <?php
 get_footer();

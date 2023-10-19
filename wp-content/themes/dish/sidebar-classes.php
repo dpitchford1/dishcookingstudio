@@ -9,7 +9,6 @@ if ( ! is_active_sidebar( 'sidebar-classes' ) ) {
 	return;
 }
 ?>
-
 <div id="secondary" class="widget-area" role="complementary">
     <h3>Classes Sidebars.php</h3>
     <h4>Coming from admin</h4>
