@@ -241,17 +241,17 @@ if ( ! class_exists( 'Dish' ) ) :
 			 */
 			add_theme_support( 'responsive-embeds' );
 
-			add_theme_support(
-				'amp',
-				array(
-					'nav_menu_toggle' => array(
-						'nav_container_id'           => 'site-navigation',
-						'nav_container_toggle_class' => 'toggled',
-						'menu_button_id'             => 'site-navigation-menu-toggle',
-						'menu_button_toggle_class'   => 'toggled',
-					),
-				)
-			);
+			// add_theme_support(
+			// 	'amp',
+			// 	array(
+			// 		'nav_menu_toggle' => array(
+			// 			'nav_container_id'           => 'site-navigation',
+			// 			'nav_container_toggle_class' => 'toggled',
+			// 			'menu_button_id'             => 'site-navigation-menu-toggle',
+			// 			'menu_button_toggle_class'   => 'toggled',
+			// 		),
+			// 	)
+			// );
 		}
 
 		/**

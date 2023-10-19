@@ -9,7 +9,10 @@ get_header(); ?>
 
 <!-- Get Recipe Data Blocks -->
 <?php 
-
+global $wp_scripts;
+echo '<pre>';
+var_dump($wp_scripts);
+echo '</pre>';
 // $overview = get_field('overview');
 // $ingredients = get_field('ingredients');
 // $instructions = get_field('instructions');

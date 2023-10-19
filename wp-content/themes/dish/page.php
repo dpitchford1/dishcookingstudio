@@ -14,7 +14,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -28,7 +27,7 @@ get_header(); ?>
 				 *
 				 * @hooked dish_display_comments - 10
 				 */
-				do_action( 'dish_page_after' );
+				//do_action( 'dish_page_after' );
 
 			endwhile; // End of the loop.
 			?>

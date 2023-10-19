@@ -39,7 +39,7 @@ if ( ! class_exists( 'cleanup' ) ) :
             add_action( 'wp_enqueue_scripts', array( $this, 'plugins_cleanup' ), 20 );
 
             add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_cleanup' ), 20 );
-            // add_action( 'wp_enqueue_scripts', array( $this, 'events_cleanup' ), 20 );
+            //add_action( 'wp_enqueue_scripts', array( $this, 'events_cleanup' ), 99999 );
 
 		}
 
@@ -167,12 +167,14 @@ public function head_shampoo() {
  * Disable google fonts loading in functions file, and add @font-face rules into customizer (or somewhere else) for SELF HOSTING fonts
  */
 public function general_css_cleanup() {
+    
     wp_deregister_style( 'dish-style' );
     wp_dequeue_style( 'dish-style-inline' );
 
     wp_deregister_style( 'classic-theme-styles' );
     wp_dequeue_style( 'classic-theme-styles' );
 
+    
     wp_deregister_style( 'global-styles' );
     wp_dequeue_style( 'global-styles' );
 
@@ -183,11 +185,15 @@ public function general_css_cleanup() {
     wp_deregister_style( 'wc-blocks-style' );
     wp_dequeue_style( 'wc-blocks-style' );
 
-    wp_deregister_style( 'dish-gutenberg-blocks' );
-    wp_dequeue_style( 'dish-gutenberg-blocks' );
+    
+        wp_deregister_style( 'dish-gutenberg-blocks' );
+        wp_dequeue_style( 'dish-gutenberg-blocks' );
 
-    wp_deregister_style( 'wp-block-library-theme' );
-    wp_dequeue_style( 'wp-block-library-theme' );
+        wp_deregister_style( 'wp-block-library-theme' );
+        wp_dequeue_style( 'wp-block-library-theme' );
+    if ( !is_admin() ) {
+    }
+
 }
 
 /**
@@ -240,31 +246,69 @@ public function woocommerce_cleanup() {
  * Events Cleanup
  */
 public function events_cleanup() {
-    // remove all EventPrime CSS
-    wp_dequeue_style( 'ep-public-css' );
+    // material fonts
     wp_dequeue_style( 'ep-material-fonts' );
-    wp_dequeue_style( 'ep-toast-css' );
+    wp_deregister_style( 'ep-material-fonts' );
 
-    // wp_deregister_style( 'em-front-jquery-ui' );
-    // wp_dequeue_style( 'em-front-jquery-ui' );
-    // wp_dequeue_style( 'em-front-select2-css' );
+    // general css
+    wp_dequeue_style( 'ep-public-css' );
+    wp_deregister_style( 'ep-public-css' );
+
+    // // calendar?
     // wp_dequeue_style( 'ep-front-event-calendar-css' );
-    // wp_dequeue_style( 'ep-front-events-css' );
-    // wp_dequeue_style( 'ep-responsive-slides-css' );
+    // wp_deregister_style( 'ep-front-event-calendar-css' );
 
-    // contact form
+    // // events?
+    // wp_dequeue_style( 'ep-front-events-css' );
+    // wp_deregister_style( 'ep-front-events-css' );
+
+    // // widgets?
+    // wp_dequeue_style( 'ep-widgets-style' );
+    // wp_deregister_style( 'ep-widgets-style' );
+
+    // inline styles for register / login
+    wp_dequeue_style( 'create-block-ep-login-block-style' );
+    wp_deregister_style( 'create-block-ep-login-block-style' );
+    wp_dequeue_style( 'create-block-ep-register-block-style' );
+    wp_deregister_style( 'create-block-ep-register-block-style' );
+    wp_dequeue_style( 'create-block-ep-square-cards-block-style' );
+    wp_deregister_style( 'create-block-ep-square-cards-block-style' );
+
+    // remove toast
+    wp_dequeue_style( 'ep-toast-css' );
+    wp_deregister_style( 'ep-toast-css' );
+
+    wp_dequeue_script( 'ep-toast-js' );
+    wp_dequeue_script( 'ep-toast-message-js' );
+
+    // responsive slides
+    wp_dequeue_style( 'ep-responsive-slides-css' );
+    wp_deregister_style( 'ep-responsive-slides-css' );
+
+    wp_dequeue_script( 'ep-responsive-slides-js' );
     wp_deregister_script( 'ep-responsive-slides-js' );
+
+    // Masonry layout
     wp_deregister_script( 'masonry' );
 
-    wp_deregister_script( 'ep-front-events-js' );
-    wp_deregister_script( 'ep-front-events-js-js' );
+    // Locales JS
+    wp_dequeue_script( 'ep-front-event-fulcalendar-local-js' );
     wp_deregister_script( 'ep-front-event-fulcalendar-local-js' );
-    wp_deregister_script( 'ep-front-event-fulcalendar-moment-js' );
-    wp_deregister_script( 'ep-front-event-calendar-js' );
+
+    // JqueryUI - doesn't work
+    // wp_deregister_style( 'em-front-jquery-ui' );
+    // wp_dequeue_style( 'em-front-jquery-ui' );
 
     wp_deregister_script( 'jquery-ui-core' );
+
+    // Select2 - doesn't work
+    wp_dequeue_style( 'em-front-select2-css' );
+    wp_deregister_style( 'em-front-select2-css' );
+
     wp_dequeue_script( 'em-front-select2-js' );
-    wp_dequeue_script( 'ep-front-event-moment-js' );
+    wp_deregister_script( 'em-front-select2-js' );
+
+
 }
 
   

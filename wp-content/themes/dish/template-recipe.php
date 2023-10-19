@@ -21,10 +21,8 @@ get_header(); ?>
 ?>
 
 <div id="primary" class="content-area">
-    <h2>Test Recipes Output Page</h2>
     <main id="main" class="site-main" role="main">
         <section>
-            <h3>Get the Recipe Details</h3>
             <article>
                 <!-- <h4>Recipe Title: <?php the_title(); ?></h4>
                 <p>Date published: <?php echo get_the_date( 'Y-m-d' ); ?></p> -->
@@ -85,14 +83,7 @@ get_header(); ?>
                     
                 <?php endwhile; ?>
             <?php endif; ?>
-
-
-
             </article>
-
-                <article style="margin-top: 12em">
-                
-                </article>
 
             </section>
 
