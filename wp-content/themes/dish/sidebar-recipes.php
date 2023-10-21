@@ -10,6 +10,6 @@ if ( ! is_active_sidebar( 'sidebar-recipes' ) ) {
 }
 ?>
 <div id="secondary" class="widget-area" role="complementary">
-    <h3>Recipes Sidebars.php</h3>
+    <h3>More from Dish</h3>
 	<?php dynamic_sidebar( 'sidebar-recipes' ); ?>
 </div><!-- #secondary -->

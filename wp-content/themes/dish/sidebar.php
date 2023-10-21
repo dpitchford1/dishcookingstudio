@@ -10,7 +10,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 <div id="secondary" class="widget-area" role="complementary">
-    <h3>Sidebars - sidebars.php</h3>
+    <h3>More from Dish</h3>
     <?php
         if ( is_page_template('template-corporate.php') ) {
             dynamic_sidebar( 'corporate' );

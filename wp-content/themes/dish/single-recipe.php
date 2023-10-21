@@ -12,10 +12,10 @@ get_header(); ?>
 $meta = get_field('overview'); // 'our_services' is your parent group
 $cook = $meta['cook_time']; // 'service_one' is your child group
 
-global $wp_scripts;
-echo '<pre>';
-var_dump($wp_scripts);
-echo '</pre>';
+// global $wp_scripts;
+// echo '<pre>';
+// var_dump($wp_scripts);
+// echo '</pre>';
 // $overview = get_field('overview');
 // $ingredients = get_field('ingredients');
 // $instructions = get_field('instructions');
@@ -44,7 +44,6 @@ echo '</pre>';
             <?php if( have_rows('overview') ): ?>
             <?php while( have_rows('overview') ): the_row();?>
         <ul>
-            <li><em>output from from loop</em></li>
             <li><strong>Cook Time:</strong> <?php the_sub_field('cook_time'); ?> - comma?</li>
             <li><strong>Cook Time:</strong> <?php echo $cook['time']; ?> - <?php echo $cook['length']; ?> - or dash?</li>
             <li><strong>Prep Time:</strong> <?php the_sub_field('prep_time'); ?></li>

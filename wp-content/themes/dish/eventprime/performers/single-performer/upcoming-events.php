@@ -10,9 +10,9 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <div class="ep-box-col-12 event-<?php echo esc_attr($args->event_args['event_style']);?>-view">
     <div class="ep-row-heading ep-text-center ep-my-4">
-        <div class="ep-upcoming-title ep-fw-bold ep-fs-5 ep-mt-5 ep-d-flex ep-justify-content-center">
-            <?php esc_html_e( 'Upcoming Events', 'eventprime-event-calendar-management' );?>
-            <span class="em_events_count-wrap em_bg"></span>
+        <div class="ep-upcoming-title ep-fw-bold ep-fs-5 ep-mt-5 ep-d-flex">
+            <h3><?php esc_html_e( 'Upcoming Events', 'eventprime-event-calendar-management' );?>
+            <span class="em_events_count-wrap em_bg"></span></h3>
         </div>
     </div>
     <div id="ep-upcoming-events" class="em_content_area ep-upcoming-events">
@@ -44,7 +44,7 @@ defined( 'ABSPATH' ) || exit;
         }?>
         <?php
         // Load event load more template
-        ep_get_template_part( 'performers/single-performer/load_more', null, $args );
+        //ep_get_template_part( 'performers/single-performer/load_more', null, $args );
         ?>
       </div>  
     </div>

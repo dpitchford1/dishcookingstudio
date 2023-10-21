@@ -16,7 +16,7 @@ foreach( $args->events->posts as $event ) {
         <div class="ep-event-single-card ep-event-card ep-mb-4 ep-card-col-<?php echo esc_attr($args->event_args['event_cols']);?>">
             <div class="ep-upcoming-box-card-item ep-border ep-rounded-1 ep-overflow-hidden ep-box-h-100 ep-mb-4 ep-position-relative">
                 <div class="ep-upcoming-box-card-thumb ep-overflow-hidden ep-position-relative">
-                    <a href="<?php echo esc_url( $event_data->event_url ); ?>" class="ep-img-link" <?php echo esc_attr( $new_window );?>>
+                    <a href="<?php echo esc_url( $event_data->event_url ); ?>" class="ep-img-link">
                         <?php if( ! empty( $event_data->image_url ) ) {?>
                             <img src="<?php echo esc_url( $event_data->image_url ) ?>" alt="<?php echo esc_attr( $event_data->em_name ); ?>"><?php
                         } else{?>
@@ -38,7 +38,7 @@ foreach( $args->events->posts as $event ) {
                 <div class="ep-box-card-content ep-text-small ep-p-3">
                     <div class="ep-box-title ep-box-card-title ep-text-truncate ep-mb-2">
                         <span class="ep-fw-bold ep-fs-6 ep-my-3 ep-text-dark">
-                            <a href="<?php echo esc_url( $event_data->event_url ); ?>" <?php echo esc_attr( $new_window );?>>
+                            <a href="<?php echo esc_url( $event_data->event_url ); ?>">
                                 <?php echo esc_html( $event_data->em_name ); ?>
                             </a>
                         </span> 

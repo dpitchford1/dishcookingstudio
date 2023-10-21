@@ -60,7 +60,7 @@ if( ! empty( $args->event->em_venue ) ) {
                                                 echo esc_html( $event_venue->name );
                                                 $venue_url = $args->event->venue_details->venue_url;
                                                 ?>
-                                                <a href="<?php echo esc_url( $venue_url );?>" target="_blank" id="ep_event_venue_url">
+                                                <a href="<?php echo esc_url( $venue_url );?>" id="ep_event_venue_url">
                                                     <span class="material-icons-outlined ep-fs-6 ep-text-primary ep-align-text-bottom">open_in_new</span>
                                                 </a>
                                             </div>
@@ -114,12 +114,12 @@ if( ! empty( $args->event->em_venue ) ) {
                                     <?php foreach( $other_events as $event ) {?>
                                         <div class="ep-box-row ep-align-items-center ep-mb-4 ep-pb-2 ep-border-bottom">
                                             <div class="ep-box-col-2">
-                                                <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?> class="ep-sl-other-event-link">
+                                                <a href="<?php echo esc_url( $event->event_url );?>" class="ep-sl-other-event-link">
                                                     <img class="ep-rounded-circle ep-sl-other-event-img" src="<?php echo esc_url( $event->image_url );?>" width="60px" height="60px">
                                                 </a>
                                             </div>
                                             <div class="ep-box-col-7">
-                                                <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?>>
+                                                <a href="<?php echo esc_url( $event->event_url );?>">
                                                     <div class="ep-fw-bold ep-text-small"><?php echo esc_html( $event->name );?></div>
                                                 </a>
                                                 <div class="ep-text-small ep-text-muted ep-desc-truncate"><?php echo wp_trim_words( wp_kses_post( $event->description ), 35 );?></div>
@@ -128,20 +128,20 @@ if( ! empty( $args->event->em_venue ) ) {
                                                 <?php 
                                                 $view_details_text = ep_global_settings_button_title('View Details');
                                                 if( check_event_has_expired( $event ) ) {?>
-                                                    <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?>>
+                                                    <a href="<?php echo esc_url( $event->event_url );?>">
                                                         <input type="button" class="ep-btn ep-btn-outline-primary ep-btn-sm" value="<?php echo esc_html( $view_details_text ); ?>">
                                                     </a><?php
                                                 } else{
                                                     if( ! empty( $event->em_enable_booking ) ) {
                                                         if( $event->em_enable_booking == 'bookings_off' ) {?>
-                                                            <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?>>
+                                                            <a href="<?php echo esc_url( $event->event_url );?>">
                                                                 <input type="button" class="ep-btn ep-btn-outline-primary ep-btn-sm" value="<?php echo esc_html( $view_details_text ); ?>">
                                                             </a><?php
                                                         } elseif( $event->em_enable_booking == 'external_bookings' ) {
                                                             if( empty( $event->em_custom_link_new_browser ) ) {
                                                                 $new_window = '';
                                                             }?>
-                                                            <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?>>
+                                                            <a href="<?php echo esc_url( $event->event_url );?>">
                                                                 <input type="button" class="ep-btn ep-btn-outline-primary ep-btn-sm" value="<?php echo esc_html( $view_details_text ); ?>">
                                                             </a><?php
                                                         } else{
@@ -150,15 +150,15 @@ if( ! empty( $args->event->em_venue ) ) {
                                                                 $check_for_booking_status = $event_controller->check_for_booking_status( $event->all_tickets_data, $event );
                                                                 if( ! empty( $check_for_booking_status ) ) {
                                                                     if( $check_for_booking_status['status'] == 'not_started' ) {?>
-                                                                        <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?>>
+                                                                        <a href="<?php echo esc_url( $event->event_url );?>">
                                                                             <input type="button" class="ep-btn ep-btn-outline-primary ep-btn-sm" value="<?php echo esc_html( $check_for_booking_status['message'] );?>">
                                                                         </a><?php
                                                                     } elseif( $check_for_booking_status['status'] == 'off' ) {?>
-                                                                        <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?>>
+                                                                        <a href="<?php echo esc_url( $event->event_url );?>">
                                                                             <input type="button" class="ep-btn ep-btn-outline-primary ep-btn-sm" value="<?php echo esc_html( $check_for_booking_status['message'] );?>">
                                                                         </a><?php
                                                                     } else{?>
-                                                                        <a href="<?php echo esc_url( $event->event_url );?>" <?php echo esc_attr( $new_window );?>>
+                                                                        <a href="<?php echo esc_url( $event->event_url );?>">
                                                                             <input type="button" class="ep-btn ep-btn-outline-primary ep-btn-sm" data-event_id="<?php echo esc_html( $event->id );?>" value="<?php echo  esc_html__( $check_for_booking_status['message'], 'eventprime-event-calendar-management' );?>">
                                                                         </a><?php
                                                                     }

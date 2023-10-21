@@ -12,13 +12,13 @@ if( ! empty( $args->event->image_url ) || ! empty( $event_gallery ) ) {?>
                         $event_gallery = explode( ',', $event_gallery );
                         if( ! empty( $args->event->image_url ) && ! empty( has_post_thumbnail( $args->event->em_id ) ) ) {?>
                             <li class="ep-m-0 ep-p-0">
-                                <img src="<?php echo esc_url( $args->event->image_url );?>" alt="<?php echo esc_attr( $args->event->name );?>" class="ep-d-block" >
+                                <img src="<?php echo esc_url( $args->event->image_url );?>" alt="<?php echo esc_attr( $args->event->name );?>" class="ep-d-block">
                             </li><?php
                         }
                         foreach( $event_gallery as $image ){
                             $gal_url = wp_get_attachment_image_url( $image, 'large' );
                             if( ! empty( $gal_url ) ) {?>
-                                <li><img src="<?php echo esc_url( $gal_url );?>" alt="<?php echo esc_attr( $args->event->name );?>" ></li><?php
+                                <li><img src="<?php echo esc_url( $gal_url );?>" alt="<?php echo esc_attr( $args->event->name );?>"></li><?php
                             }
                         }?>
                     </ul><?php

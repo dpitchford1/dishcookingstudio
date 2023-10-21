@@ -10,8 +10,8 @@ defined( 'ABSPATH' ) || exit;
 
 get_header(); ?>
 
-<div id="primary" class="site-content">
-    <div id="content" role="main">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
         <?php while ( have_posts() ) : the_post(); ?>
 
             <?php
@@ -21,9 +21,9 @@ get_header(); ?>
             
         <?php endwhile; // end of the loop. ?>
 
-        <?php comments_template(); ?>
+        <?php // comments_template(); ?>
 
-    </div><!-- #content -->
-</div><!-- #primary -->
-
+        </main><!-- #main -->
+	</div><!-- #primary -->
+    <?php get_sidebar( 'recipes' ); ?>
 <?php get_footer(); ?>

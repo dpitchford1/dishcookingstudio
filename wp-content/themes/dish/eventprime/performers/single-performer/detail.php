@@ -9,11 +9,10 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <div class="ep-box-col-10">
-    <p>detail.php</p>
     <div class="ep-single-box-info">
         <div class="ep-single-box-content">
             <div class="ep-single-box-title-info">
-                <h3 class="ep-single-box-title ep-performer-name" title="<?php echo esc_attr( $args->performer->name ); ?>">
+                <h3 class="ep-single-box-title ep-performer-name">
                     <?php echo esc_html( $args->performer->name ); ?>
                 </h3>
                 <?php if ( isset( $args->performer->em_role ) ){ ?>   
@@ -24,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
                         <li>
                             <div class="ep-details-box-icon ep-pr-2">
                                 <?php $image_url = EP_BASE_URL . 'includes/assets/images/email-icon.png';?>
-                                <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                                <img src="<?php echo esc_url( $image_url );?>" width="30" alt="email" />
                             </div>
                             <div class="ep-details-box-value"><?php
                                 foreach ( $args->performer->em_performer_emails as $key => $val ) {
@@ -39,7 +38,7 @@ defined( 'ABSPATH' ) || exit;
                         <li>
                             <div class="ep-details-box-icon ep-pr-2">
                                 <?php $image_url = EP_BASE_URL . 'includes/assets/images/phone-icon.png';?>
-                                <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                                <img src="<?php echo esc_url( $image_url );?>" width="30" alt="phone" />
                             </div>
                             <div class="ep-details-box-value"><?php
                                 echo implode( ', ', $args->performer->em_performer_phones );?>
@@ -50,7 +49,7 @@ defined( 'ABSPATH' ) || exit;
                         <li>
                             <div class="ep-details-box-icon ep-pr-2">
                                 <?php $image_url = EP_BASE_URL . 'includes/assets/images/website-icon.png';?>
-                                <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                                <img src="<?php echo esc_url( $image_url );?>" width="30" alt="email" />
                             </div>
                             <div class="ep-details-box-value"><?php
                                 foreach ( $args->performer->em_performer_websites as $key => $val ) {
@@ -68,33 +67,33 @@ defined( 'ABSPATH' ) || exit;
             <?php if ( ! empty( $args->performer->em_social_links ) ) { ?>
                 <div class="ep-single-box-social">
                     <?php if ( isset( $args->performer->em_social_links['facebook'] ) ) { ?>
-                        <a href="<?php echo esc_url( $args->performer->em_social_links['facebook'] ); ?>" target="_blank" title="<?php echo esc_attr('Facebook'); ?>" class="ep-facebook-f"> 
+                        <a href="<?php echo esc_url( $args->performer->em_social_links['facebook'] ); ?>" target="_blank" class="ep-facebook-f"> 
                             <?php $image_url = EP_BASE_URL . 'includes/assets/images/facebook-icon.png';?>
-                            <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="facebook" />
                         </a><?php
                     }
                     if ( isset( $args->performer->em_social_links['instagram'] ) ) {?>
-                        <a href="<?php echo esc_url( $args->performer->em_social_links['instagram'] ); ?>" target="_blank" title="<?php echo esc_attr('Instagram'); ?>" class="ep-instagram">
+                        <a href="<?php echo esc_url( $args->performer->em_social_links['instagram'] ); ?>" target="_blank" class="ep-instagram">
                             <?php $image_url = EP_BASE_URL . 'includes/assets/images/instagram-icon.png';?>
-                            <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="intagram" />
                         </a><?php
                     }
                     if ( isset( $args->performer->em_social_links['linkedin'] ) ) {?>
-                        <a href="<?php echo esc_url( $args->performer->em_social_links['linkedin'] ); ?>" target="_blank" title="<?php echo esc_attr('Linkedin'); ?>" class="ep-linkedin"> 
+                        <a href="<?php echo esc_url( $args->performer->em_social_links['linkedin'] ); ?>" target="_blank" class="ep-linkedin"> 
                             <?php $image_url = EP_BASE_URL . 'includes/assets/images/linkedin-icon.png';?>
-                            <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="LinkedIn" />
                         </a><?php
                     }
                     if ( isset( $args->performer->em_social_links['twitter'] ) ) {?>
-                        <a href="<?php echo esc_url( $args->performer->em_social_links['twitter'] ); ?>" target="_blank" title="<?php echo esc_attr('Twitter'); ?>" class="ep-twitter">
+                        <a href="<?php echo esc_url( $args->performer->em_social_links['twitter'] ); ?>" target="_blank" class="ep-twitter">
                             <?php $image_url = EP_BASE_URL . 'includes/assets/images/twitter-icon.png';?>
-                            <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="X" />
                         </a><?php 
                     }
                     if ( isset( $args->performer->em_social_links['youtube'] ) ) {?>
-                        <a href="<?php echo esc_url( $args->performer->em_social_links['youtube'] ); ?>" target="_blank" title="<?php echo esc_attr('Youtube'); ?>" class="ep-youtube">
+                        <a href="<?php echo esc_url( $args->performer->em_social_links['youtube'] ); ?>" target="_blank" class="ep-youtube">
                             <?php $image_url = EP_BASE_URL . 'includes/assets/images/youtube-icon.png';?>
-                            <img src="<?php echo esc_url( $image_url );?>" width="30" />
+                            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="YouTube" />
                         </a><?php 
                     }?>
                 </div><?php 
@@ -146,13 +145,13 @@ defined( 'ABSPATH' ) || exit;
                                             <?php if(get_post_thumbnail_id($args->performer->id)):
                                                 $url = wp_get_attachment_url( get_post_thumbnail_id($args->performer->id), 'large' )?>
                                                 <li>
-                                                    <img src="<?php echo esc_url( $url ); ?>" >
+                                                    <img src="<?php echo esc_url( $url ); ?>" alt="Gallery Image">
                                                 </li>
                                             <?php endif;?>
                                             <?php foreach ( $args->performer->em_performer_gallery as $id ) {
                                                 $url = wp_get_attachment_url( $id, 'large' )?>
                                                 <li>
-                                                    <img src="<?php echo esc_url( $url ); ?>" >
+                                                    <img src="<?php echo esc_url( $url ); ?>" alt="Gallery Image" >
                                                 </li><?php 
                                             }?>
                                         </ul>

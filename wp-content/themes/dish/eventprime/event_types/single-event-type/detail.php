@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="ep-single-box-info">
         <div class="ep-single-box-content">
             <div class="ep-single-box-title-info">
-                <div class="ep-single-box-title ep-organizer-name ep-fs-3 ep-fw-bold" title="<?php echo esc_attr( $args->event_type->name ); ?>">
+                <div class="ep-single-box-title ep-organizer-name ep-fs-3 ep-fw-bold">
                     <?php echo esc_html( $args->event_type->name ); ?>
                 </div>
                 <div class="ep-single-age-group ep-pb-2"><?php 

@@ -6,12 +6,12 @@
                 $styles .= ( ! empty( $args->event->event_type_details->em_color ) ? 'background-color:' . $args->event->event_type_details->em_color . ';' : '');
                 $styles .= ( ! empty( $args->event->event_type_details->em_type_text_color ) ? 'color:' . $args->event->event_type_details->em_type_text_color . ';' : '');?>
                 <div class="ep-box-col-12">
-                    <span class="ep-bg-warning ep-py-2 ep-px-3 ep-mr-3" id="ep_single_event_event_type" style="<?php echo esc_attr( $styles );?>">
+                    <p><strong>Class Format:</strong> <span class="ep-bg-warning ep-py-2 ep-px-3 ep-mr-3" id="ep_single_event_event_type" style="<?php echo esc_attr( $styles );?>">
                         <?php
                         if( ! empty( $args->event->event_type_details ) ) {
                             echo esc_html( $args->event->event_type_details->name );
                         }?>
-                    </span>
+                    </span></p>
                 </div><?php
             }?>
         </div>
@@ -20,39 +20,39 @@
         <!-- Social Information -->
         <?php if ( ! empty( $args->event->em_social_links ) ) { ?>
             <?php if ( ! empty( $args->event->em_social_links['facebook'] ) ) { ?>
-                <a href="<?php echo esc_url( $args->event->em_social_links['facebook'] ); ?>" target="_blank" title="<?php echo esc_attr('Facebook'); ?>" class="ep-facebook-f ep-px-2">
+                <a href="<?php echo esc_url( $args->event->em_social_links['facebook'] ); ?>" target="_blank" class="ep-facebook-f ep-px-2">
                     <?php $image_url = EP_BASE_URL . 'includes/assets/images/facebook-icon.png'; ?>
-                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" />
+                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" alt="Facebook" />
                 </a><?php
             }
             if ( ! empty( $args->event->em_social_links['instagram'] ) ) { ?>
-                <a href="<?php echo esc_url( $args->event->em_social_links['instagram'] ); ?>" target="_blank" title="<?php echo esc_attr('Instagram'); ?>" class="ep-instagram ep-px-2">
+                <a href="<?php echo esc_url( $args->event->em_social_links['instagram'] ); ?>" target="_blank" class="ep-instagram ep-px-2">
                     <?php $image_url = EP_BASE_URL . 'includes/assets/images/instagram-icon.png'; ?>
-                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" />
+                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" alt="Instagram" />
                 </a><?php
             }
             if ( ! empty( $args->event->em_social_links['linkedin'] ) ) { ?>
-                <a href="<?php echo esc_url( $args->event->em_social_links['linkedin'] ); ?>" target="_blank" title="<?php echo esc_attr('Linkedin'); ?>" class="ep-linkedin ep-px-2">
+                <a href="<?php echo esc_url( $args->event->em_social_links['linkedin'] ); ?>" target="_blank" class="ep-linkedin ep-px-2">
                     <?php $image_url = EP_BASE_URL . 'includes/assets/images/linkedin-icon.png'; ?>
-                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" />
+                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" alt="LinkedIn" />
                 </a><?php
             }
             if ( ! empty( $args->event->em_social_links['twitter'] ) ) { ?>
-                <a href="<?php echo esc_url( $args->event->em_social_links['twitter'] ); ?>" target="_blank" title="<?php echo esc_attr('Twitter'); ?>" class="ep-twitter ep-px-2">
+                <a href="<?php echo esc_url( $args->event->em_social_links['twitter'] ); ?>" target="_blank" class="ep-twitter ep-px-2">
                     <?php $image_url = EP_BASE_URL . 'includes/assets/images/twitter-icon.png'; ?>
-                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" />
+                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" alt="X" />
                 </a><?php
             }
             if ( ! empty( $args->event->em_social_links['youtube'] ) ) { ?>
-                <a href="<?php echo esc_url( $args->event->em_social_links['youtube'] ); ?>" target="_blank" title="<?php echo esc_attr('Youtube'); ?>" class="ep-youtube ep-px-2">
+                <a href="<?php echo esc_url( $args->event->em_social_links['youtube'] ); ?>" target="_blank" class="ep-youtube ep-px-2">
                     <?php $image_url = EP_BASE_URL . 'includes/assets/images/youtube-icon.png'; ?>
-                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" />
+                    <img src="<?php echo esc_url( $image_url ); ?>" width="24" alt="Youtube" />
                 </a><?php
             }
         } ?>
         <!-- <span class="material-icons-outlined ep-mr-3">notifications_active</span> -->
         <?php //wishlist
-        do_action( 'ep_event_view_wishlist_icon', $args->event, 'event_detail' );
+        // do_action( 'ep_event_view_wishlist_icon', $args->event, 'event_detail' );
 
         //calendar icon
         //do_action( 'ep_event_view_calendar_icon', $args->event, 'event_detail' );?>
@@ -60,7 +60,7 @@
         <div class="ep-sl-event-action ep-cursor ep-position-relative ep-event-ical-action">
                 <span class="material-icons-outlined ep-exp-dropbtn ep-mr-3 ep-cursor">calendar_month</span>
                 <ul class="ep-calendar-exp-dropdown-content ep-event-share ep-m-0 ep-p-0">
-                    <li class="ep-event-social-icon">  <a href="javascript:void();"  id="ep_event_ical_export" title="<?php esc_html_e( '+ iCal Export','eventprime-event-calendar-management' ); ?>" data-event_id="<?php echo esc_attr( $args->event->id );?>"><?php esc_html_e( 'iCal Export','eventprime-event-calendar-management' ); ?></a></li>
+                    <li class="ep-event-social-icon"><a href="javascript:void();"  id="ep_event_ical_export" data-event_id="<?php echo esc_attr( $args->event->id );?>"><?php esc_html_e( 'iCal Export','eventprime-event-calendar-management' ); ?></a></li>
                     <?php
                     // add to google calendar 
                     $gcal_starts = $gcal_ends = $gcal_details = $location = $calendar_url = '';
@@ -78,7 +78,7 @@
                     }
             
                     if( ! empty( $gcal_starts ) && ! empty( $gcal_ends ) ) {?>
-                    <li class="ep-event-social-icon"> <a href="<?php echo esc_url( $calendar_url );?>" target="_blank" title="<?php esc_html_e( 'Google Calendar','eventprime-event-calendar-management' ); ?>"><?php esc_html_e( 'Google Calendar','eventprime-event-calendar-management' ); ?></a></li>
+                    <li class="ep-event-social-icon"> <a href="<?php echo esc_url( $calendar_url );?>" target="_blank"><?php esc_html_e( 'Google Calendar','eventprime-event-calendar-management' ); ?></a></li>
                     <?php }
 
                     // add to Outlook 365  
@@ -100,7 +100,7 @@
                     }
                     
                     if( ! empty( $outlook_starts ) && ! empty( $outlook_ends ) ) {?>
-                        <li class="ep-event-social-icon">  <a href="<?php echo esc_url( $outlook_url );?>" target="_blank" title="<?php esc_html_e( 'Outlook 365','eventprime-event-calendar-management' ); ?>"><?php esc_html_e( 'Outlook 365','eventprime-event-calendar-management' ); ?></a></li>
+                        <li class="ep-event-social-icon"><a href="<?php echo esc_url( $outlook_url );?>" target="_blank"><?php esc_html_e( 'Outlook 365','eventprime-event-calendar-management' ); ?></a></li>
                     <?php  }
 
                     // add to Outlook Live 
@@ -122,7 +122,7 @@
                     }
                     
                     if( ! empty( $outlook_lv_starts ) && ! empty( $outlook_lv_ends ) ) {?>
-                        <li class="ep-event-social-icon">  <a href="<?php echo esc_url( $outlook_lv_url );?>" target="_blank" title="<?php esc_html_e( 'Outlook Live','eventprime-event-calendar-management' ); ?>"><?php esc_html_e( 'Outlook Live','eventprime-event-calendar-management' ); ?></a></li>
+                        <li class="ep-event-social-icon"><a href="<?php echo esc_url( $outlook_lv_url );?>" target="_blank"><?php esc_html_e( 'Outlook Live','eventprime-event-calendar-management' ); ?></a></li>
                     <?php } ?>
                 </ul>
 
