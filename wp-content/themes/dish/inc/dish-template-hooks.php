@@ -22,11 +22,11 @@ add_action( 'dish_sidebar', 'dish_get_sidebar', 10 );
  * @see  dish_site_branding()
  * @see  dish_primary_navigation()
  */
-add_action( 'dish_header', 'dish_header_container', 0 );
-add_action( 'dish_header', 'dish_skip_links', 5 );
-add_action( 'dish_header', 'dish_site_branding', 20 );
+//add_action( 'dish_header', 'dish_header_container', 0 );
+//add_action( 'dish_header', 'dish_skip_links', 5 );
+//add_action( 'dish_header', 'dish_site_branding', 20 );
 add_action( 'dish_header', 'dish_secondary_navigation', 30 );
-add_action( 'dish_header', 'dish_header_container_close', 41 );
+//add_action( 'dish_header', 'dish_header_container_close', 41 );
 add_action( 'dish_header', 'dish_primary_navigation_wrapper', 42 );
 add_action( 'dish_header', 'dish_primary_navigation', 50 );
 add_action( 'dish_header', 'dish_primary_navigation_wrapper_close', 68 );

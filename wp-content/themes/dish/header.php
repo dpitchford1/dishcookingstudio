@@ -25,28 +25,37 @@
 <link rel="stylesheet" href="/assets/css/resources/style.min.css" media="all">
 <link rel="stylesheet" href="/assets/css/resources/customizer.min.css" media="all">
 <link rel="stylesheet" href="/assets/css/resources/plugins.min.css" media="all">
-<!-- <link rel="stylesheet" href="/assets/css/resources/icons.min.css" media="all"> -->
+<link rel="stylesheet" href="/assets/css/resources/updates.min.css" media="all">
 <?php wp_head(); ?>
-<link rel="stylesheet" href="/assets/css/resources/store.min.css" media="all">
+<link rel="stylesheet" href="/assets/css/resources/wc.min.css" media="all">
 </head>
 <?php flush(); ?>
 
 <body <?php body_class(); ?> data-off-screen="hidden" id="page-body" data-theme="dark">
 <?php wp_body_open(); ?>
-<?php do_action( 'dish_before_site' ); ?>
-<?php do_action( 'dish_before_header' ); ?>
+<!-- <a href="#global-header" id="exit-off-canvas" class="exit-offcanvas" aria-controls="global-header"><span class="hide-text">Hide Menu</span></a> -->
+<?php /* accessibility nav */ ?>
+<a class="quick-links" href="#main-content">Skip to Main Content</a>
+<a class="quick-links" href="#global-footer">Skip to Footer</a>
+
+<?php // do_action( 'dish_before_site' ); ?>
+<?php // do_action( 'dish_before_header' ); ?>
 <?php if( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ) { ?>
         <?php // echo '<span class="small-text" style="font-size: 12px">* Current template: ' . get_current_template() . ' *</span>'; ?>
         <?php } ?>
 <header id="masthead" class="site-header" role="banner" style="<?php dish_header_styles(); ?>">
+    <div class="col-full">
+
+    <?php if ( is_front_page() ) : ?>
+        <h1 class="brand brand-fs" id="logo" itemscope itemtype="http://schema.org/Organization"><span class="is--logo">Dish Cooking Studio</span></h1>
+    <?php else : ?>
+        <h1 class="brand brand-fs" id="logo" itemscope itemtype="http://schema.org/Organization"><a class="is--logo" href="/" rel="home">Dish Cooking Studio</a></h1>
+    <?php endif ?>
+
     <?php
     /**
      * Functions hooked into dish_header action
      *
-     * @hooked dish_header_container                 - 0
-     * @hooked dish_skip_links                       - 5
-     * @hooked dish_social_icons                     - 10
-     * @hooked dish_site_branding                    - 20
      * @hooked dish_secondary_navigation             - 30
      * @hooked dish_product_search                   - 40
      * @hooked dish_header_container_close           - 41
@@ -57,6 +66,8 @@
      */
     do_action( 'dish_header' );
     ?>
+
+    </div><!-- #col-full -->
 </header><!-- #masthead -->
 <?php
 /**

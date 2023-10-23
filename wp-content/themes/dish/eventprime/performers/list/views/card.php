@@ -8,8 +8,8 @@
  */
 ?>
 <?php foreach ( $args->performers->posts as $performer ) { ?>
-<div class="simple-gridx3--item">
-    <a href="<?php echo esc_url( $performer->performer_url ); ?>" class="ep-img-link"><img src="<?php echo esc_url( $performer->image_url ); ?>" alt="<?php echo esc_attr( $performer->name ); ?>" class="card-img"></a>
+<div class="simple--card-item">
+    <a href="<?php echo esc_url( $performer->performer_url ); ?>" class="ep-img-link"><img src="<?php echo esc_url( $performer->image_url ); ?>" alt="<?php echo esc_attr( $performer->name ); ?>" class="card--img"></a>
 
     <h3><a href="<?php echo esc_url( $performer->performer_url ); ?>"><?php echo esc_html( $performer->name ); ?></a></h3>
 

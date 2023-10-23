@@ -8,44 +8,31 @@
  */
 defined( 'ABSPATH' ) || exit;
 ?>
-<div class="ep-box-col-12 event-<?php echo esc_attr($args->event_args['event_style']);?>-view">
-    <div class="ep-row-heading ep-text-center ep-my-4">
-        <div class="ep-upcoming-title ep-fw-bold ep-fs-5 ep-mt-5 ep-d-flex">
-            <h3><?php esc_html_e( 'Upcoming Events', 'eventprime-event-calendar-management' );?>
-            <span class="em_events_count-wrap em_bg"></span></h3>
-        </div>
-    </div>
-    <div id="ep-upcoming-events" class="em_content_area ep-upcoming-events">
-        <div class="event-details-upcoming-<?php echo esc_attr($args->event_args['event_style']);?>-view">
-        <?php if( isset( $args->events->posts ) && ! empty( $args->events->posts ) && count( $args->events->posts ) > 0 ) {
-            ?>
-            <div class="ep-box-row" id="ep-performer-upcoming-events"><?php
-                switch ( $args->event_args['event_style'] ) {
-                    case 'card':
-                    case 'grid': 
-                        ep_get_template_part( 'events/upcoming-events/views/card', null, $args );
-                        break;
-                    case 'mini-list': 
-                    case 'plain_list': 
-                        ep_get_template_part( 'events/upcoming-events/views/mini-list', null, $args );
-                        break;
-                    case 'list':
-                    case 'rows': 
-                        ep_get_template_part( 'events/upcoming-events/views/list', null, $args );
-                        break;
-                    default: 
-                        ep_get_template_part( 'events/upcoming-events/views/mini-list', null, $args );
-                }?>
-            </div><?php
-        } else{?>
-            <div class="ep-alert ep-alert-warning ep-mt-3 ep-py-2">
-                <?php esc_html_e( 'No upcoming event found.', 'eventprime-event-calendar-management' ); ?>
-            </div><?php
-        }?>
+<section class="simple-grid gridx4">
+    <h3 class="has--heading">Upcoming Classes <span class="em_events_count-wrap em_bg"></span></h3>
+    
+<?php if( isset( $args->events->posts ) && ! empty( $args->events->posts ) && count( $args->events->posts ) > 0 ) { ?>
         <?php
-        // Load event load more template
-        //ep_get_template_part( 'performers/single-performer/load_more', null, $args );
-        ?>
-      </div>  
+        switch ( $args->event_args['event_style'] ) {
+            case 'card':
+            case 'grid': 
+                ep_get_template_part( 'events/upcoming-events/views/card', null, $args );
+                break;
+            case 'mini-list': 
+            case 'plain_list': 
+                ep_get_template_part( 'events/upcoming-events/views/mini-list', null, $args );
+                break;
+            case 'list':
+            case 'rows': 
+                ep_get_template_part( 'events/upcoming-events/views/list', null, $args );
+                break;
+            default: 
+                ep_get_template_part( 'events/upcoming-events/views/mini-list', null, $args );
+        }?>
+    
+    <?php } else{?>
+    <div class="ep-alert ep-alert-warning ep-mt-3 ep-py-2">
+        <?php esc_html_e( 'No upcoming event found.', 'eventprime-event-calendar-management' ); ?>
     </div>
-</div>
+<?php }?>
+</section>

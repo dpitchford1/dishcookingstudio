@@ -19,8 +19,6 @@ get_header(); ?>
             
         endwhile; // end of the loop. ?>
 
-        <?php comments_template(); ?>
-
     </div><!-- #content -->
 </div><!-- #primary -->
 

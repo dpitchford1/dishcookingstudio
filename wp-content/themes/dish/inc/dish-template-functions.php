@@ -183,52 +183,6 @@ if ( ! function_exists( 'dish_header_widget_region' ) ) {
 	}
 }
 
-if ( ! function_exists( 'dish_site_branding' ) ) {
-	/**
-	 * Site branding wrapper and display
-	 *
-	 * @since  1.0.0
-	 * @return void
-	 */
-	function dish_site_branding() {
-		?>
-		<div class="site-branding">
-			<?php dish_site_title_or_logo(); ?>
-		</div>
-		<?php
-	}
-}
-
-if ( ! function_exists( 'dish_site_title_or_logo' ) ) {
-	/**
-	 * Display the site title or logo
-	 *
-	 * @since 2.1.0
-	 * @param bool $echo Echo the string or return it.
-	 * @return string
-	 */
-	function dish_site_title_or_logo( $echo = true ) {
-		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-			$logo = get_custom_logo();
-			$html = is_home() ? '<h1 class="logo">' . $logo . '</h1>' : $logo;
-		} else {
-			$tag = is_home() ? 'h1' : 'div';
-
-			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
-
-			if ( '' !== get_bloginfo( 'description' ) ) {
-				$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
-			}
-		}
-
-		if ( ! $echo ) {
-			return $html;
-		}
-
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	}
-}
-
 if ( ! function_exists( 'dish_primary_navigation' ) ) {
 	/**
 	 * Display Primary Navigation
@@ -641,18 +595,6 @@ if ( ! function_exists( 'dish_get_sidebar' ) ) {
 	 */
 	function dish_get_sidebar() {
 		get_sidebar();
-
-        // if (is_page_template('template-events.php')) { 
-        //     get_sidebar('sidebar-events');
-        // }
-
-        // if ( is_home() ) :
-        //     get_sidebar( 'home' );
-        //   elseif ( is_404() ) :
-        //     get_sidebar( '404' );
-        //   else :
-        //     get_sidebar();
-        //   endif;
 	}
 }
 
@@ -666,7 +608,7 @@ if ( ! function_exists( 'dish_post_thumbnail' ) ) {
 	 * @param string $size the post thumbnail size.
 	 * @since 1.5.0
 	 */
-	function dish_post_thumbnail( $size = 'full' ) {
+	function dish_post_thumbnail( $size = 'medium' ) {
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( $size );
 		}
@@ -678,7 +620,7 @@ if ( ! function_exists( 'dish_primary_navigation_wrapper' ) ) {
 	 * The primary navigation wrapper
 	 */
 	function dish_primary_navigation_wrapper() {
-		echo '<div class="dish-primary-navigation"><div class="col-full">';
+		echo '<div class="dish-primary-navigation">';
 	}
 }
 
@@ -687,24 +629,6 @@ if ( ! function_exists( 'dish_primary_navigation_wrapper_close' ) ) {
 	 * The primary navigation wrapper close
 	 */
 	function dish_primary_navigation_wrapper_close() {
-		echo '</div></div>';
-	}
-}
-
-if ( ! function_exists( 'dish_header_container' ) ) {
-	/**
-	 * The header container
-	 */
-	function dish_header_container() {
-		echo '<div class="col-full">';
-	}
-}
-
-if ( ! function_exists( 'dish_header_container_close' ) ) {
-	/**
-	 * The header container close
-	 */
-	function dish_header_container_close() {
 		echo '</div>';
 	}
 }

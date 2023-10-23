@@ -7,8 +7,9 @@
  *
  */
 ?>
-<?php
-if( isset( $args->events->posts ) && ! empty( $args->events->posts ) && count( $args->events->posts ) > 0 ) {?>
+
+<?php if( isset( $args->events->posts ) && ! empty( $args->events->posts ) && count( $args->events->posts ) > 0 ) {?>
+
     <?php
     switch ( $args->event_args['event_style']) {
         case 'card':
@@ -25,5 +26,6 @@ if( isset( $args->events->posts ) && ! empty( $args->events->posts ) && count( $
             break;
         default: 
             ep_get_template_part( 'events/upcoming-events/views/mini-list', null, $args );
-    }    
-}
+        }?>
+
+<?php }?>
