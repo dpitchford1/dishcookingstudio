@@ -174,7 +174,7 @@ if ( ! function_exists( 'dish_header_widget_region' ) ) {
 		if ( is_active_sidebar( 'header-1' ) ) {
 			?>
 		<div class="header-widget-region" role="complementary">
-			<div class="col-full">
+			<div class="fluid">
 				<?php dynamic_sidebar( 'header-1' ); ?>
 			</div>
 		</div>

@@ -14,38 +14,30 @@ defined( 'ABSPATH' ) || exit;
     <figcaption class="detail--socials">
         <!-- Social links -->
     <?php if ( ! empty( $args->performer->em_social_links ) ) { ?>
-    
+    <ul class="inline-list socials--list">
     <?php if ( isset( $args->performer->em_social_links['facebook'] ) ) { ?>
-        <a href="<?php echo esc_url( $args->performer->em_social_links['facebook'] ); ?>" target="_blank" class="ep-facebook-f"> 
-            <?php $image_url = EP_BASE_URL . 'includes/assets/images/facebook-icon.png';?>
-            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="facebook" />
-        </a><?php
-    }
+        <li><a class="is-circle" href="<?php echo esc_url( $args->performer->em_social_links['facebook'] ); ?>" rel="external" target="blank"><span class="ico i-m i--fb">Facebook</span></a></li>
+
+    <?php }
     if ( isset( $args->performer->em_social_links['instagram'] ) ) {?>
-        <a href="<?php echo esc_url( $args->performer->em_social_links['instagram'] ); ?>" target="_blank" class="ep-instagram">
-            <?php $image_url = EP_BASE_URL . 'includes/assets/images/instagram-icon.png';?>
-            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="intagram" />
-        </a><?php
-    }
-    if ( isset( $args->performer->em_social_links['linkedin'] ) ) {?>
-        <a href="<?php echo esc_url( $args->performer->em_social_links['linkedin'] ); ?>" target="_blank" class="ep-linkedin"> 
-            <?php $image_url = EP_BASE_URL . 'includes/assets/images/linkedin-icon.png';?>
-            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="LinkedIn" />
-        </a><?php
-    }
+        <li><a class="is-circle" href="<?php echo esc_url( $args->performer->em_social_links['instagram'] ); ?>" rel="external" target="blank"><span class="ico i-m i--ig">Instagram</span></a></li>
+        
+    <?php }
     if ( isset( $args->performer->em_social_links['twitter'] ) ) {?>
-        <a href="<?php echo esc_url( $args->performer->em_social_links['twitter'] ); ?>" target="_blank" class="ep-twitter">
-            <?php $image_url = EP_BASE_URL . 'includes/assets/images/twitter-icon.png';?>
-            <img src="<?php echo esc_url( $image_url );?>" width="30" alt="X" />
-        </a><?php 
-    }
+        <li><a class="is-circle" href="<?php echo esc_url( $args->performer->em_social_links['twitter'] ); ?>" rel="external" target="blank"><span class="ico i-m i--tw">Twitter</span></a></li>
+
+    <?php }
+    if ( isset( $args->performer->em_social_links['linkedin'] ) ) {?>
+        <li><a class="is-circle" href="<?php echo esc_url( $args->performer->em_social_links['linkedin'] ); ?>" rel="external" target="blank"><span class="ico i-m i--linked">Twitter</span></a></li>
+        
+    <?php }
     if ( isset( $args->performer->em_social_links['youtube'] ) ) {?>
-        <a href="<?php echo esc_url( $args->performer->em_social_links['youtube'] ); ?>" target="_blank" class="ep-youtube">
+        <li><a href="<?php echo esc_url( $args->performer->em_social_links['youtube'] ); ?>" target="_blank" class="ep-youtube">
             <?php $image_url = EP_BASE_URL . 'includes/assets/images/youtube-icon.png';?>
             <img src="<?php echo esc_url( $image_url );?>" width="30" alt="YouTube" />
-        </a><?php 
-    }?>
-
+        </a></li>
+    <?php }?>
+    </ul>
     <?php }?> 
     </figcaption>
 </figure>

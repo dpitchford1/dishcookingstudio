@@ -14,21 +14,21 @@ if( ! empty( $args->event->em_venue ) ) {
                         <?php if( ! empty( $event_venue->em_address ) && ! empty( $event_venue->em_display_address_on_frontend ) ) {?>
                             <span id="ep_single_event_venue_address">
                                 <?php echo esc_html( $event_venue->em_address );?>
-                            </span><?php
-                        }?>
+                            </span>
+                        <?php }?>
                         <span id="ep_sl_venue_more" class="material-icons-outlined ep-cursor ep-bg-secondary ep-bg-opacity-10 ep-ml-2 ep-rounded-circle">expand_more</span>
                     </span>
                 </div>
-                <div id="venue_hidden_details" class="ep-box-row ep-mb-3 ep-mt-3 ep-pt-3 ep-border-top" style="display: none">
+                <div id="venue_hidden_details" class="ep-box-row ep-mb-3 ep-mt-3 ep-pt-3 ep-border-top" style="display: block">
                     <div class="ep-box-col-12">
                         <ul class="ep-nav-pills ep-mx-0 ep-p-0 ep-mb-3 ep-venue-details-tabs" role="tablist">
                             <li class="ep-tab-item ep-mx-0" role="presentation"><a href="javascript:void(0)" data-tag="ep-sl-venue" class="ep-tab-link ep-tab-active"><?php esc_html_e( 'Details', 'eventprime-event-calendar-management' );?></a></li>
                             <?php if( ! empty( ep_get_global_settings( 'gmap_api_key' ) ) && empty( ep_get_global_settings( 'hide_map_tab' ) ) ) {?>
-                                <li class="ep-tab-item ep-mx-0" role="presentation"><a href="javascript:void(0)" data-tag="ep-sl-address-map" class="ep-tab-link"><?php esc_html_e( 'Map', 'eventprime-event-calendar-management' );?></a></li><?php
-                            }?>
+                                <li class="ep-tab-item ep-mx-0" role="presentation"><a href="javascript:void(0)" data-tag="ep-sl-address-map" class="ep-tab-link"><?php esc_html_e( 'Map', 'eventprime-event-calendar-management' );?></a></li>
+                            <?php }?>
                             <?php if(empty(ep_get_global_settings('hide_weather_tab'))){?>
-                                <li class="ep-tab-item ep-mx-0" role="presentation"><a href="javascript:void(0)" data-tag="ep-sl-venue-weather" class="ep-tab-link"><?php esc_html_e( 'Weather', 'eventprime-event-calendar-management' );?></a></li><?php 
-                            }
+                                <li class="ep-tab-item ep-mx-0" role="presentation"><a href="javascript:void(0)" data-tag="ep-sl-venue-weather" class="ep-tab-link"><?php esc_html_e( 'Weather', 'eventprime-event-calendar-management' );?></a></li>
+                            <?php }
                             $other_display = 'style=display:none;';
                             if( count( $other_events ) > 0 ) {
                                 $other_display = '';
@@ -38,8 +38,8 @@ if( ! empty( $args->event->em_venue ) ) {
                                     <a href="javascript:void(0)" data-tag="ep-sl-other-events" class="ep-tab-link">
                                         <?php esc_html_e( 'Other Events', 'eventprime-event-calendar-management' );?>
                                     </a>
-                                </li><?php 
-                            } ?>
+                                </li>
+                            <?php } ?>
                         </ul>    
 
                         <div id="ep-tab-container" class="ep-box-w-100">
@@ -67,9 +67,8 @@ if( ! empty( $args->event->em_venue ) ) {
                                             <?php if( ! empty( $event_venue->em_address ) && ! empty( $event_venue->em_address->em_display_address_on_frontend ) ) {?>
                                                 <p class="ep-text-muted ep-text-small" id="ep_event_venue_address">
                                                     <?php echo esc_html( $event_venue->em_address );?>
-                                                </p><?php
-                                            }
-                                        }?>
+                                                </p>
+                                        <?php } }?>
                                         <p class="ep-text-small ep-content-truncate" id="ep_event_venue_description">
                                             <?php echo wp_kses_post( $event_venue->description );?>
                                         </p>
@@ -86,19 +85,19 @@ if( ! empty( $args->event->em_venue ) ) {
                                                     </div><?php
                                                 }
                                             }?>
-                                        </div><?php
-                                    }?>
+                                        </div>
+                                    <?php }?>
                                 </div>
                             </div>
                             <?php if( ! empty( ep_get_global_settings( 'gmap_api_key' ) ) && empty( ep_get_global_settings( 'hide_map_tab' ) ) ) {?>
                                 <div class="ep-tab-content ep-item-hide" id="ep-sl-address-map" role="tabpanel">
                                     <?php if( ! empty( $event_venue->em_address ) ) {?>
-                                        <div id="ep-event-venue-map" data-venue_address="<?php echo esc_attr( $event_venue->em_address );?>" data-venue_lat="<?php echo esc_attr( $event_venue->em_lat );?>" data-venue_lng="<?php echo esc_attr( $event_venue->em_lng );?>" data-venue_zoom_level="<?php echo esc_attr( $event_venue->em_zoom_level );?>" style="height: 400px;"></div><?php
-                                    } else{
+                                        <div id="ep-event-venue-map" data-venue_address="<?php echo esc_attr( $event_venue->em_address );?>" data-venue_lat="<?php echo esc_attr( $event_venue->em_lat );?>" data-venue_lng="<?php echo esc_attr( $event_venue->em_lng );?>" data-venue_zoom_level="<?php echo esc_attr( $event_venue->em_zoom_level );?>" style="height: 400px;"></div>
+                                        <?php } else{
                                         esc_html_e( 'No address found', 'eventprime-event-calendar-management' );
                                     }?>
-                                </div><?php
-                            }?>
+                                </div>
+                            <?php }?>
                             <!-- Weather -->
                             <?php if( empty( ep_get_global_settings( 'hide_weather_tab' ) ) ) {?>
                                 <div class="ep-tab-content ep-item-hide" id="ep-sl-venue-weather" role="tabpanel">
@@ -168,15 +167,14 @@ if( ! empty( $args->event->em_venue ) ) {
                                                     }
                                                 }?>
                                             </div>
-                                        </div><?php
-                                    }
-                                }?>
+                                        </div>
+                                <?php } }?>
                             </div>
                             <?php } ?>
                         </div>   
                     </div>
                 </div>
             </div>
-        </div><?php
-    }
-}?>
+        </div>
+
+<?php } }?>

@@ -39,7 +39,7 @@ if ( ! class_exists( 'cleanup' ) ) :
             add_action( 'wp_enqueue_scripts', array( $this, 'plugins_cleanup' ), 20 );
 
             add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_cleanup' ), 20 );
-            //add_action( 'wp_enqueue_scripts', array( $this, 'events_cleanup' ), 99999 );
+            add_action( 'wp_enqueue_scripts', array( $this, 'events_cleanup' ), 99999 );
 
 		}
 
@@ -247,12 +247,12 @@ public function woocommerce_cleanup() {
  */
 public function events_cleanup() {
     // material fonts
-    wp_dequeue_style( 'ep-material-fonts' );
-    wp_deregister_style( 'ep-material-fonts' );
+    // wp_dequeue_style( 'ep-material-fonts' );
+    // wp_deregister_style( 'ep-material-fonts' );
 
     // general css
-    wp_dequeue_style( 'ep-public-css' );
-    wp_deregister_style( 'ep-public-css' );
+    // wp_dequeue_style( 'ep-public-css' );
+    // wp_deregister_style( 'ep-public-css' );
 
     // // calendar?
     // wp_dequeue_style( 'ep-front-event-calendar-css' );
@@ -263,16 +263,16 @@ public function events_cleanup() {
     // wp_deregister_style( 'ep-front-events-css' );
 
     // // widgets?
-    // wp_dequeue_style( 'ep-widgets-style' );
-    // wp_deregister_style( 'ep-widgets-style' );
+    wp_dequeue_style( 'ep-widgets-style' );
+    wp_deregister_style( 'ep-widgets-style' );
 
     // inline styles for register / login
-    wp_dequeue_style( 'create-block-ep-login-block-style' );
-    wp_deregister_style( 'create-block-ep-login-block-style' );
-    wp_dequeue_style( 'create-block-ep-register-block-style' );
-    wp_deregister_style( 'create-block-ep-register-block-style' );
-    wp_dequeue_style( 'create-block-ep-square-cards-block-style' );
-    wp_deregister_style( 'create-block-ep-square-cards-block-style' );
+    // wp_dequeue_style( 'create-block-ep-login-block-style' );
+    // wp_deregister_style( 'create-block-ep-login-block-style' );
+    // wp_dequeue_style( 'create-block-ep-register-block-style' );
+    // wp_deregister_style( 'create-block-ep-register-block-style' );
+    // wp_dequeue_style( 'create-block-ep-square-cards-block-style' );
+    // wp_deregister_style( 'create-block-ep-square-cards-block-style' );
 
     // remove toast
     wp_dequeue_style( 'ep-toast-css' );
@@ -281,32 +281,32 @@ public function events_cleanup() {
     wp_dequeue_script( 'ep-toast-js' );
     wp_dequeue_script( 'ep-toast-message-js' );
 
-    // responsive slides
-    wp_dequeue_style( 'ep-responsive-slides-css' );
-    wp_deregister_style( 'ep-responsive-slides-css' );
+    // // responsive slides
+    // wp_dequeue_style( 'ep-responsive-slides-css' );
+    // wp_deregister_style( 'ep-responsive-slides-css' );
 
-    wp_dequeue_script( 'ep-responsive-slides-js' );
-    wp_deregister_script( 'ep-responsive-slides-js' );
+    // wp_dequeue_script( 'ep-responsive-slides-js' );
+    // wp_deregister_script( 'ep-responsive-slides-js' );
 
-    // Masonry layout
-    wp_deregister_script( 'masonry' );
+    // // Masonry layout
+    // wp_deregister_script( 'masonry' );
 
-    // Locales JS
-    wp_dequeue_script( 'ep-front-event-fulcalendar-local-js' );
-    wp_deregister_script( 'ep-front-event-fulcalendar-local-js' );
+    // // Locales JS
+    // wp_dequeue_script( 'ep-front-event-fulcalendar-local-js' );
+    // wp_deregister_script( 'ep-front-event-fulcalendar-local-js' );
 
-    // JqueryUI - doesn't work
-    // wp_deregister_style( 'em-front-jquery-ui' );
-    // wp_dequeue_style( 'em-front-jquery-ui' );
+    // // JqueryUI - doesn't work
+    // // wp_deregister_style( 'em-front-jquery-ui' );
+    // // wp_dequeue_style( 'em-front-jquery-ui' );
 
-    wp_deregister_script( 'jquery-ui-core' );
+    // wp_deregister_script( 'jquery-ui-core' );
 
-    // Select2 - doesn't work
-    wp_dequeue_style( 'em-front-select2-css' );
-    wp_deregister_style( 'em-front-select2-css' );
+    // // Select2 - doesn't work
+    // wp_dequeue_style( 'em-front-select2-css' );
+    // wp_deregister_style( 'em-front-select2-css' );
 
-    wp_dequeue_script( 'em-front-select2-js' );
-    wp_deregister_script( 'em-front-select2-js' );
+    // wp_dequeue_script( 'em-front-select2-js' );
+    // wp_deregister_script( 'em-front-select2-js' );
 
 
 }

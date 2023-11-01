@@ -15,49 +15,14 @@ $is_event_expired = check_event_has_expired( $args->event );
             if( ! empty( $args->event->em_enable_booking ) && $args->event->em_enable_booking != 'bookings_off' ) {
                 if( $args->event->post_status == 'publish' || ( ! empty( $all_tickets ) && count( $all_tickets ) > 0 ) ) {
                     if( ! $is_event_expired ) {?>
-                        <div class="ep-box-col-12 ep-px-4 ep-pt-3">
-                            <span class="ep-fs-4"><?php echo esc_html( $buy_ticket_text ); ?> </span>
-                        </div><?php
+                        
+                        <?php
                     }?>
                     <div class="ep-box-col-12 ep-p-4">
                         <div class="ep-mb-3 ep-position-relative">
                             <?php do_action( 'ep_event_detail_right_event_dates_section', $args->event );?>
                         </div>
-                        <!-- Ticket Price -->
-                        <?php if( $args->event->em_enable_booking == 'bookings_on' ) {?>
-                            <div id="ep_single_event_ticket_price">
-                                <?php if( ! empty( $args->event->ticket_price_range ) ) {
-                                    if( isset( $args->event->ticket_price_range['multiple'] ) && $args->event->ticket_price_range['multiple'] == 1 ) {
-                                        if( $args->event->ticket_price_range['min'] == $args->event->ticket_price_range['max'] ) {?>
-                                            <h6 class="ep-fs-6"><?php
-                                                if( $args->event->ticket_price_range['min'] ){
-                                                    echo esc_html( ep_price_with_position( $args->event->ticket_price_range['min'] ) );
-                                                } else{
-                                                    ep_show_free_event_price( $args->event->ticket_price_range['min'] );
-                                                }?>
-                                            </h6><?php
-                                        } else{?>
-                                            <h6 class="ep-fs-6 ep-fw-bold"><?php 
-                                                esc_html_e( 'Starting from', 'eventprime-event-calendar-management' );
-                                                echo ' '.esc_html( ep_price_with_position( $args->event->ticket_price_range['min'] ) );?>
-                                            </h6>
-                                            <h6 class="ep-fs-6"><?php
-                                                echo esc_html( ep_price_with_position ( $args->event->ticket_price_range['min'] ) . ' - ' . ep_price_with_position( $args->event->ticket_price_range['max'] ) );?>
-                                            </h6><?php
-                                        }
-                                    } else{?>
-                                        <h6 class="ep-fs-6"><?php
-                                            if( $args->event->ticket_price_range['price'] ){
-                                                echo esc_html( ep_price_with_position( $args->event->ticket_price_range['price'] ) );
-                                            } else{
-                                                esc_html_e( 'Free', 'eventprime-event-calendar-management' ); 
-                                            }?>
-                                        </h6><?php
-                                    }
-                                }?>
-                            </div><?php
-                        }?>
-                        <!-- Ticket Price End -->
+                        
                         <!-- Button -->
                         <div class="ep-mt-3 d-grid gap-2 d-md-block" id="ep_single_event_ticket_now_wrapper"><?php 
                             if( $args->event->em_enable_booking == 'external_bookings' ) {
@@ -191,19 +156,8 @@ $is_event_expired = check_event_has_expired( $args->event );
     }
     // Attendee Note
     if( ! empty( $args->event->em_audience_notice ) && empty( ep_get_global_settings('hide_note_section') ) ) {?>
-        <div class="ep-box-row ep-mt-3">
-            <div class="ep-box-col-12 ep-mt-3 ep-border-left ep-border-3 ep-border-warning">
-                <div class="ep-fw-bold">
-                    <?php esc_html_e( 'Attendee Note', 'eventprime-event-calendar-management' );?>
-                </div>
-            </div>
-            <div class="ep-box-col-12"> 
-                <div class="ep-event-note ep-mt-1">
-                    <?php echo esc_html( $args->event->em_audience_notice );?>
-                </div>
-            </div>
-        </div> <?php
-    }?>
+        
+    <?php }?>
     
 </div>
 <?php if( ! empty( $booking_allowed ) && $args->event->post_status == 'publish' && ! $is_event_expired ) {

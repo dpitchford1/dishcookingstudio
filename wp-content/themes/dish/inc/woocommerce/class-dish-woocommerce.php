@@ -223,7 +223,7 @@ if ( ! class_exists( 'Dish_WooCommerce' ) ) :
 		 */
 		public function change_breadcrumb_delimiter( $defaults ) {
 			$defaults['delimiter']   = '<span class="breadcrumb-separator"> / </span>';
-			$defaults['wrap_before'] = '<div class="dish-breadcrumb"><div class="col-full"><nav class="woocommerce-breadcrumb" aria-label="' . esc_attr__( 'breadcrumbs', 'dish' ) . '">';
+			$defaults['wrap_before'] = '<div class="dish-breadcrumb"><div class="fluid"><nav class="woocommerce-breadcrumb" aria-label="' . esc_attr__( 'breadcrumbs', 'dish' ) . '">';
 			$defaults['wrap_after']  = '</nav></div></div>';
 			return $defaults;
 		}

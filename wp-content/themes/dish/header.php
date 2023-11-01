@@ -25,8 +25,10 @@
 <link rel="stylesheet" href="/assets/css/resources/style.min.css" media="all">
 <link rel="stylesheet" href="/assets/css/resources/customizer.min.css" media="all">
 <link rel="stylesheet" href="/assets/css/resources/plugins.min.css" media="all">
-<link rel="stylesheet" href="/assets/css/resources/updates.min.css" media="all">
+<link rel="stylesheet" href="/assets/css/resources/dish-icons.min.css" media="all">
+
 <?php wp_head(); ?>
+<link rel="stylesheet" href="/assets/css/resources/updates.min.css" media="all">
 <link rel="stylesheet" href="/assets/css/resources/wc.min.css" media="all">
 </head>
 <?php flush(); ?>
@@ -41,10 +43,10 @@
 <?php // do_action( 'dish_before_site' ); ?>
 <?php // do_action( 'dish_before_header' ); ?>
 <?php if( in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) ) ) { ?>
-        <?php // echo '<span class="small-text" style="font-size: 12px">* Current template: ' . get_current_template() . ' *</span>'; ?>
+        <?php echo '<span class="small-text" style="font-size: 12px">* Current template: ' . get_current_template() . ' *</span>'; ?>
         <?php } ?>
 <header id="masthead" class="site-header" role="banner" style="<?php dish_header_styles(); ?>">
-    <div class="col-full">
+    <div class="fluid">
 
     <?php if ( is_front_page() ) : ?>
         <h1 class="brand brand-fs" id="logo" itemscope itemtype="http://schema.org/Organization"><span class="is--logo">Dish Cooking Studio</span></h1>
@@ -78,7 +80,6 @@
  */
 do_action( 'dish_before_content' );
 ?>
-<div id="content" class="site-content" tabindex="-1">
-    <div class="col-full">
+<div class="fluid cf">
     <?php
     do_action( 'dish_content_top' );
