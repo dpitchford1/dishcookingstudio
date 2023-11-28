@@ -1,0 +1,194 @@
+// FONTS
+$font--default: 'open', Verdana, 'Helvetica Neue', Arial, sans-serif;
+$font--light: 'lights', 'Helvetica', Arial, sans-serif;
+$font--bold: 'bold', 'Helvetica', Arial, sans-serif;
+
+// IMG's
+
+
+// BASE Theme -- Light
+
+// GENERAL COLOURS
+// $color-black:    #000;
+// $color-white:    #fff;
+// $color--accent:  #bb5800;
+// $color--callout: #cf86ee;
+// $color--bling:   #F1B33B;
+// $color--access:  #b80c12;
+// $transparent:    transparent;
+
+// $color--base:    #5a5a5a;
+// $color--highlight-primary: #56005b;
+
+// Base Theme -- Dark
+$color--base-d:    #d8d8d9;
+
+
+
+// $background-primary-d: ;
+// $background-secondary-d: ;
+// $background-tertiary-d: ;
+
+
+
+// Default Theme
+$brand-primary: #222; 		// Dark Grey
+$brand-secondary: #444; 	// Grey
+$body-color: #5a5a5a;   	// MED grey
+$link-color: #56005b; 			// purple
+$link-hover: #bb5800;  		// Grey
+$callout: #cf86ee; 			// callout purple
+
+
+// NEW Default
+$color-bg: #fff;
+$color-text: #5a5a5a;
+$color-links: #56005b;
+$color-hover: #bb5800;
+
+$color-heading-alpha: #56005b;
+;
+$color-heading-beta: #444;
+$color-heading-gamma: #666;
+ 
+$color-accent: #56005b;
+$color-callout: #bb5800;
+
+$color-bg-primary: #f8f8f8;
+$color-bg-secondary: #dbdbdb;
+$color-bg-tertiary: #bababa;
+
+
+//DARK THEME
+$color-bg-d: #222;
+$color-text-d: #bdbdbd;
+$color-links-d: #ccffff;
+$color-hover-d: #bb5800;
+
+$color-heading-alpha-d: #efefef;
+$color-heading-beta-d: #ddd;
+$color-heading-gamma-d: #e9bbfc;
+
+$color-accent-d: #e9bbfc;
+$color-callout-d: #bb5800;
+
+$color-bg-primary-d: #1e1e1e;
+$color-bg-secondary-d: #1a1a1a;
+$color-bg-tertiary-d: #111111;
+
+$color-access-d: #b80c12;
+
+
+$themes: (
+  'dark': (
+    'logo': url("/assets/img/logos/logo-light.svg"),
+    'logo-icon': url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MzAiIGhlaWdodD0iNTMwIiB2aWV3Qm94PSIzMC40NCA2MDkuMTQgNTMwIDUzMCI+PHBhdGggZmlsbD0iI0VDRUNFQyIgZD0iTTQ4Mi43NiA2ODYuODNjLTUwLjAzLTUwLjAzLTExNi41NS03Ny41OS0xODcuMzEtNzcuNTlzLTEzNy4yOCAyNy41NS0xODcuMzEgNzcuNTktNzcuNTkgMTE2LjU1LTc3LjU5IDE4Ny4zMSAyNy41NSAxMzcuMjggNzcuNTkgMTg3LjMxYzUwLjAzIDUwLjAzIDExNi41NSA3Ny41OSAxODcuMzEgNzcuNTlzMTM3LjI4LTI3LjU1IDE4Ny4zMS03Ny41OWM1MC4wMy01MC4wMyA3Ny41OS0xMTYuNTUgNzcuNTktMTg3LjMxLS4wMS03MC43Ni0yNy41Ni0xMzcuMjgtNzcuNTktMTg3LjMxem0tMzYzLjA3IDM2My4wNmMtNDYuOTQtNDYuOTUtNzIuOC0xMDkuMzYtNzIuOC0xNzUuNzUgMC02NS42NyAyNS4zMS0xMjcuNDQgNzEuMjktMTc0LjIgMS4yMyAxMS42NSAxMS42IDE5LjE1IDExLjYgMTkuMTUgNjAuOTkgNTcuMDIgOTkuMTMgMTE1LjMgMTIyLjU3IDE2MS43NC0yLjMgMy4zOC05LjEzIDE0LjQ2LTUuNDIgMjEuNDYgMCAwIDUuODMgOS45MyAxOC42MSA2Ljc5IDE2Ljg5IDM5LjM3IDIxLjY3IDY1IDIxLjY3IDY1IDkuMjYgMjAuMTMgMjEuNDEgMTIuODEgMjEuNDIgMTIuOCAxMy4zLTYuNzEgOS4yNi0yMC43NCA5LjI2LTIwLjc0LTYuMDYtMjUuMDctMTQuMTQtNDkuMjctMjMuNDMtNzIuMjYgMjEuMTEtMTIuMDEgNTQuNjctMzEuMzkgNzYuMTEtNDUuMjQgMCAwLTI2Ljc4IDQ5LjU1LTI4Ljg1IDE1OC40LTIxLjM1LTMuODMtNDYuMDYtNy43MS03NC42MS0xMS40OSAwIDAtNjYuODUtMTAuMjQtNjguNzQgNi45OSAwIDAtMTAgMTQuOTIgNTAuNSAyMS4yNSAwIDAgNDQuNDggNi44MSA5MyAxNy4xLjQ1IDE2LjUzIDEuNDYgMzQuMTcgMy4xNiA1Mi45OSAwIDAgLjczIDE0LjYxIDguMzQgMjIuMDRhMjUwLjI3NiAyNTAuMjc2IDAgMCAxLTU3LjkzIDYuNzdjLTY2LjM4IDAtMTI4LjgtMjUuODUtMTc1Ljc1LTcyLjh6bTI2MC43NyA0MS4yOHMtMi4xMy0xNi41OC0zLjE1LTQyLjIxYzguMjUgMi4wMiAxNi4zMyA0LjEyIDI0LjAzIDYuMjggMCAwIDI4LjUyIDguNTYgNTEuOTggOC45OSAwIDAgLjg5LjA0IDIuMjctLjAyLTIyLjk2IDE5LjQxLTQ4Ljg5IDM0LjI5LTc2LjcyIDQ0LjE4IDEuNTQtNC4xMiAyLjMzLTkuNjggMS41OS0xNy4yMnptOTEuOTktNDIuNTdjLS41LTMuMy0yLjQxLTYuNDUtNy4zOC04LjU0IDAgMC0yMC44Ny0xMS45LTg4LjIyLTI2LjE4LjctNTIuODYgOC4xMy0xMjIuMzcgMzcuMzMtMTczLjc1IDAgMCAxNy43MS0yNC43IDIuODktNDAuNTQgMCAwLTExLjI0LTE0LjgyLTM1Ljc2LTEuMDIgMCAwLTYxLjMxIDM4LjMyLTgwLjczIDUxLjA5IDAgMCAxNy44OC02Ni43NiAxNi44Ni04Ni44NiAwIDAgMy4wNy0yNC4xOS0xNC44Mi0yMC45NSAwIDAtMjAuNiAxLjg4LTIwLjk1IDIwLjk1IDAgMCAuNiAzNC4xNS0xMi40MyA3Ni41NC00OC4xOC05Mi42Ny0xMDcuNjMtMTU1LjA0LTEwNy42My0xNTUuMDQtNS40Mi01LjE4LTEwLjM0LTguMS0xNC43Mi05LjUgNDIuNjgtMzEuOTQgOTQuMjgtNDkuMjIgMTQ4LjU0LTQ5LjIyIDY2LjM5IDAgMTI4LjgxIDI1Ljg1IDE3NS43NSA3Mi44IDQ2Ljk0IDQ2Ljk0IDcyLjggMTA5LjM2IDcyLjggMTc1Ljc1LjAxIDY1LjgtMjUuMzkgMTI3LjY4LTcxLjUzIDE3NC40N3oiLz48Y2lyY2xlIGN4PSIyMDUuNDIiIGN5PSI5NDMuNjMiIHI9IjIwLjk1IiBmaWxsPSIjRUNFQ0VDIi8+PGNpcmNsZSBjeD0iNDI0Ljc4IiBjeT0iOTY1Ljg2IiByPSIyMC4xOCIgZmlsbD0iI0VDRUNFQyIvPjwvc3ZnPg=="),
+
+    'color-black': $color-black,
+    'color-white': $color-white,
+    'bg': $color-bg-d,
+    'color-text': $color-text-d,
+    'color-links': $color-links-d,
+    'color-hover': $color-hover-d,
+    'color-heading-alpha': $color-heading-alpha-d,
+    'color-heading-beta': $color-heading-beta-d,
+    'color-heading-gamma': $color-heading-gamma-d,
+    'color-accent': $color-accent-d,
+    'color-callout': $color-callout-d,
+    'color-bg-primary': $color-bg-primary-d,
+    'color-bg-secondary': $color-bg-secondary-d,
+    'color-bg-tertiary': $color-bg-tertiary-d,
+    'color-access': $color-access-d,
+    'color-transparent': $transparent
+  )
+);
+
+
+// Dark Theme
+
+
+// BRAND COLOURS
+//$brand-primary: #222; 		// Dark Grey
+$brand-primary-alt: #0a6d94; 	// light blue
+$brand-primary-alt2: #7baeb7;
+$brand-primary-alt3: #f4feff;
+$brand-primary-alt4: #dafcfe;
+//$brand-secondary: #222; 		// Grey
+$brand-tertiary: #e9bbfc; 		// Light Purple
+
+
+
+// FONT COLOURS
+//$body-color: #3b3a3f; 	// dark grey
+//$body-color: #5a5a5a;   	// dark grey
+//$link-color: #000; 			// black
+//$link-hover: #666;  		// Grey
+
+$callout: #e9bbfc; 			// callout purple
+$callout-alt: #88090d; 		// callout red
+
+
+// BUTTON COLOURS
+$color-primary: #88090d;	// RED 
+$color-secondary: #445057;	// DARK GREY
+$color-tertiary: #adb0af;	// MEDIUM GREY
+
+
+// BACKGROUND COLOURS
+$bg-primary: #f8f8f8;
+$bg-primary2: #fdfdfd;
+//$bg-secondary: #445057;
+//$bg-tertiary: #adb0af;
+
+
+// BORDER COLOURS
+$border-primary: #ccc;
+$border-color-ul: #adb0af;
+
+
+$core-font-size: 1rem;
+$core-line-height: 1.25 * $core-font-size;
+
+$text-settings: (
+  'xs': (
+    font-size: .75rem, // 12px
+    line-height: $core-line-height
+  ),
+  'sm': (
+    font-size: .875rem, // 14px
+    line-height: $core-line-height
+  ),
+  'base': (
+    font-size: 1rem, // 16px
+    line-height: $core-line-height
+  ),
+  'md': (
+    font-size: 1.125rem, // 18px
+    line-height: $core-line-height * 2
+  ),
+  'lg': (
+    font-size: 1.25rem, // 20px
+    line-height: $core-line-height * 2
+  ),
+  'xl': (
+    font-size: 1.5rem, // 24px
+    line-height: $core-line-height * 2
+  )
+);
+
+// font theme function
+@function text-scale($level) {
+  @return map-get(map-get($text-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(map-get($text-settings, $level), 'line-height');
+}
+
+@mixin text-setting($level) {
+  font-size: text-scale($level);
+  line-height: line-height($level);
+}
+
+
+

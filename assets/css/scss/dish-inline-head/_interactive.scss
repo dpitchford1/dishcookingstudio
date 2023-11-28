@@ -1,0 +1,151 @@
+/* Interactive
+* ========================================================================== */
+
+/*
+* Add the correct styles in Safari.
+*/
+
+:where(dialog) {
+    height: -moz-fit-content;
+    height: fit-content;
+    left: 0;
+    margin: auto;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  
+  :where(dialog:not([open])) {
+    display: none;
+  }
+  
+  /*
+  * Add the correct display in Safari.
+  */
+  
+  :where(details > summary:first-of-type) {
+    display: list-item;
+  }
+  
+  summary {
+      display: list-item;
+      cursor: pointer;
+    }
+    
+  
+  /* Accessibility
+  * ========================================================================== */
+  /* Text meant only for screen readers. */
+  :where(.hide-text) {
+      border: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      height: 1px;
+    //   margin: -1px;
+      overflow: hidden;
+    //   padding: 0;
+      position: absolute !important;
+      width: 1px;
+      word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+  }
+  :where(.hide-text:focus){
+      border-radius: 3px;
+      clip: auto !important;
+      clip-path: none;
+      /* color: $color-black; */
+      display: block;
+      /* @include rem(font-size, 18px); */
+      font-weight: bold;
+      height: auto;
+      left: 5px;
+      line-height: normal;
+      padding: 15px 23px 14px;
+      text-decoration: none;
+      top: 5px;
+      width: auto;
+      z-index: 100000;
+  }
+  :where(.hide-divider) { border: 0 none; height: 0 !important; margin: 0; padding: 0; }
+
+  .screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+    clip: auto !important;
+    display: block;
+    font-weight: 700;
+    height: auto;
+    left: 0;
+    line-height: normal;
+    padding: 1em 1.618em;
+    text-decoration: none;
+    top: 0;
+    width: auto;
+    z-index: 100000;
+    outline: none
+}
+  
+  :where(.quick-links){
+      /* background-color: $color-bg-primary; */
+      /* color: $color-black; */
+      /* @include rem(font-size, 14px); */
+      left: 10px;
+      padding: 5px 10px;
+      position: absolute;
+      text-decoration: none;
+      top: -100%;
+      transition: top 200ms ease-in-out 0s;
+      z-index: 5;
+      transform: translateZ(0);
+      }
+  
+  :where(.quick-links:focus){
+      top: 0;
+      } 
+  
+  /**
+  * Change the cursor on busy elements in all browsers (opinionated).
+  */
+  
+  :where([aria-busy="true" i]) {
+    cursor: progress;
+  }
+  
+  /*
+  * Change the cursor on disabled, not-editable, or otherwise
+  * inoperable elements in all browsers (opinionated).
+  */
+  
+  :where([aria-disabled="true" i], [disabled]) {
+    cursor: not-allowed;
+  }
+  
+  /*
+  * Change the display on visually hidden accessible elements
+  * in all browsers (opinionated).
+  */
+  
+  :where([aria-hidden="false" i][hidden]) {
+    display: initial;
+  }
+  
+  :where([aria-hidden="false" i][hidden]:not(:focus)) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+  }

@@ -1,0 +1,121 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Base font size in pixels, if not already defined.
+// Should be the same as the font-size of the html element.
+$base-font-size: 16px !default;
+
+// Whether to output fallback values in px when outputting rems.
+$rem-with-px-fallback: true !default;
+
+// For the given property, use rem units with px as a fallback value for older
+// browsers.
+//
+// $property - The css property name.
+// $values - The value (or space-separated list of values) for the property.
+// $use-px-fallback - Boolean, default: true; whether to use pixel fallback values
+//
+// USAGE === @include rem(font-size, 14px); == substitute font-size for other css properties if needed
+
+@mixin rem($property, $values) {
+  // Create a couple of empty lists as output buffers.
+  $font-size: $base-font-size;
+  $px-values: ();
+  $rem-values: ();
+
+  // Loop through the $values list
+  @each $value in $values {
+    // For each property value, if it's in rem or px, derive both rem and
+    // px values for it and add those to the end of the appropriate buffer.
+    // Ensure all pixel values are rounded to the nearest pixel.
+    @if $value == 0 or $value == 0px {
+      // 0 -- use it without a unit
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      // px value given - calculate rem value from font-size
+      $new-rem-value: $value / $font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+      // % value given - don't add px or rem
+      $px-values: join($px-values, #{$value});
+      $rem-values: join($rem-values, #{$value});
+    } @else if $value == auto {
+      // auto - don't add px or rem
+      $px-values: join($px-values, auto);
+      $rem-values: join($rem-values, auto);
+    } @else {
+      // unitless value - use those directly as rem and calculate the px-fallback
+      $px-values: join($px-values, round($value * $font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  // output the converted rules
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
+
+
+
+//////////////////////////////
+
+// @mixin scopeToTheme($themeName,$prop,$val){
+//     .#{$themeName} & {
+//         #{$prop}: #{$val}
+//     }
+// }
+
+// usage
+// @include scopeToTheme(
+//         'dark', 'background-color', $color-black
+//       );
+
+//////////////////////////////
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
+
+/////////////////////////////
+
+// font theme function
+@function text-scale($level) {
+  @return map-get(map-get($text-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(map-get($text-settings, $level), 'line-height');
+}
+
+@mixin text-setting($level) {
+  font-size: text-scale($level);
+  line-height: line-height($level);
+}

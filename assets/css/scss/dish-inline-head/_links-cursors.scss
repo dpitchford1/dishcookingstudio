@@ -1,0 +1,49 @@
+/* Cursors 
+---------------------------------------------- */
+:where(a, label, select, .pointer, button, [type="button"], [type="reset"], [type="color"], [type="submit"], [type="file"], [type="date"], [type="time"],[type="checkbox"],[type="radio"], [type="range"], [role=button], .submit) {
+    cursor: pointer;
+}
+
+/* Links
+---------------------------------------------- */
+:where(a){ 
+	background: transparent;
+    color: purple;
+	// @include theme() {
+	//     color: theme-get('swatch-links'); 
+	// }
+}
+
+:where(a:hover){  
+	outline: none; 
+	text-decoration: none;
+}
+// a:hover:not(.menu-global a:hover), a:focus:not(.menu-global a:focus), .current-menu-item a {
+// 
+// }
+:where(a:focus){ 
+	text-decoration: underline; 
+	outline: none;
+}
+:where(a:active){ 
+    color: inherit; 
+	background-color: transparent; 
+	outline: none; 
+}
+
+/** HEADING LINKS **/
+:where(h1 a, h2 a, h3 a, h4 a, h5 a, h6 a){ 
+	text-decoration: none; 
+    display: inline-block;
+}
+:where(h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus, h4 a:hover, h4 a:focus, h5 a:hover, h5 a:focus, h6 a:hover, h6 a:focus){ 
+    text-decoration: underline;
+}
+
+/* Reversed anchors - underlines */
+:where(.ra a){
+    text-decoration: none;
+}
+:where(.ra a:hover){
+    text-decoration: underline;
+}

@@ -1,0 +1,148 @@
+/** Icons - no text **/
+.is-icon{
+    display: inline-block;
+    text-indent: -999em;
+    text-align: left;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    background-color: currentColor;
+}
+.is-icon:is(a:hover, a:focus, a:active){
+    background-color: red;
+}
+
+
+.has--icon::before{
+    content: '';
+}
+
+
+  /* smaller sizes */
+.i-xsm {
+    height: 10px;
+    width: 10px; 
+}
+  
+  .i-sm {
+    height: 15px;
+    width: 15px; 
+}
+  
+  .i-s {
+    height: 20px;
+    width: 20px; 
+}
+  
+  .i-m {
+    height: 25px;
+    width: 25px; 
+}
+  
+  .i-lg {
+    height: 40px;
+    width: 40px; 
+}
+  
+  .i-xlg {
+    height: 50px;
+    width: 50px; 
+}
+  
+  .i-xxlg {
+    height: 60px;
+    width: 60px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+.has-icon{
+    background-color: #eee;
+}
+
+.has--pin{
+    display: inline-block;
+    //background-color: lime;
+    height: 30px;
+    width: 60px;
+    padding-left: 30px;
+    background: currentColor;
+
+    -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      
+      -webkit-mask-position: center;
+      mask-position: center;
+}
+.has--pin:hover{
+    background: #009cff;
+}
+
+
+.burger {
+    margin: 1rem;
+    font-size: 20px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: none;
+    transition: 0.15s ease-out;
+    border-color: currentColor;
+    &:hover {
+      background: #000;
+      color: white;
+    }
+    &::after {
+      content: "";
+      /* Import inline SVG */
+    //   -webkit-mask-image: fs-svg-url('pin', (fill: red)); 
+    //   mask-image: fs-svg-url('pin', (fill: red));
+      
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      
+      -webkit-mask-position: center;
+      mask-position: center;
+      
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background: currentColor;
+      vertical-align: middle;
+      margin-left: 1rem;
+      transition: inherit;
+    }
+}
+.burger--green {
+    color: #007a00;
+    &:hover {
+        background: #007a00;
+    }
+}
+.burger--blue {
+    color: #009cff;
+    &:hover {
+        background: #009cff;
+    }
+}

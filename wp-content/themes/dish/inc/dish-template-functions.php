@@ -230,6 +230,7 @@ if ( ! function_exists( 'dish_secondary_navigation' ) ) {
 						array(
 							'theme_location' => 'secondary',
 							'fallback_cb'    => '',
+                            'container' => false
 						)
 					);
 				?>

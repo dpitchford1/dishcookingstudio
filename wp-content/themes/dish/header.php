@@ -22,10 +22,12 @@
 <meta name="CCBot" content="nofollow">
 <?php if ( is_front_page() ) : ?><link rel="home" title="Home page" href="/"><?php endif ?>
 
-<link rel="stylesheet" href="/assets/css/resources/style.min.css" media="all">
-<link rel="stylesheet" href="/assets/css/resources/customizer.min.css" media="all">
+<link rel="stylesheet" href="/assets/css/core/dish-inline-head.css" media="all">
+<link rel="stylesheet" href="/assets/css/core/dish-icon-system.css" media="all">
+
+<link rel="stylesheet" href="/assets/css/resources/style.css" media="all">
 <link rel="stylesheet" href="/assets/css/resources/plugins.min.css" media="all">
-<link rel="stylesheet" href="/assets/css/resources/dish-icons.min.css" media="all">
+<!-- <link rel="stylesheet" href="/assets/css/resources/dish-icons.min.css" media="all"> -->
 
 <?php wp_head(); ?>
 <link rel="stylesheet" href="/assets/css/resources/updates.min.css" media="all">
@@ -53,6 +55,9 @@
     <?php else : ?>
         <h1 class="brand brand-fs" id="logo" itemscope itemtype="http://schema.org/Organization"><a class="is--logo" href="/" rel="home">Dish Cooking Studio</a></h1>
     <?php endif ?>
+    <!-- <p><button class="burger">Negative button</button><br>
+<button class="burger burger--green">Green button</button><br>
+<button class="burger burger--blue">Blue button</button></p> -->
 
     <?php
     /**
@@ -81,5 +86,19 @@
 do_action( 'dish_before_content' );
 ?>
 <div class="fluid cf">
+    <div class="icons-testing">
+        <h5>Icons in a list, no text</h5>
+        <ul>
+            <li><a class="is-icon i-lg is-icon--pins" href="">pin</a> - icon, in an anchor, lg size</li>
+            <li><span class="is-icon i-lg is-icon--pins">pin</span> - icon, wrapped in span, lg size.</li>
+
+            <li><a class="is-icon i-lg is-icon--pins" href="">pin - icon, in an anchor, lg size, pull text left</a> </li>
+
+            <li><a class="has--pin is-icon--pins" href="">pin</a></li>
+            <li><a class="has--pin is-icon--pins" href="">pin</a></li>
+            <li><a class="has--pin is-icon--pins" href="">pin</a></li>
+        </ul>
+
+    </div>
     <?php
     do_action( 'dish_content_top' );

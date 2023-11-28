@@ -1,0 +1,100 @@
+/*
+* Sass functions forked from https://github.com/Threespot/frontline-sass/blob/3a7c6de247bb031eeb437846c0c53758dc4c31ec/src/functions/_svg-url.scss
+*/
+
+/**
+* List of all the SVG icons of the project
+*/
+$svg-icons: (
+    burger : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.8 18.92" width="24.8" height="18.92"><path d="M23.8,9.46H1m22.8,8.46H1M23.8,1H1" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/></svg>',
+    pins : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="red" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>'
+);
+
+
+
+$svg-iconz: (
+    burger : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.8 18.92" width="24.8" height="18.92"><path d="M23.8,9.46H1m22.8,8.46H1M23.8,1H1" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/></svg>',
+    loc    : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="red" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>'
+);
+
+
+
+
+
+/**
+* Characters to escape from SVGs
+* Source: https://github.com/Threespot/frontline-sass/blob/master/src/variables/_escape-chars.scss
+*/
+$fs-escape-chars: (
+  " ": "%20",
+  "'": "%22",
+  '"': "%27",
+  "#": "%23",
+  "/": "%2F",
+  ":": "%3A",
+  "(": "%28",
+  ")": "%29",
+  "%": "%25",
+  "<": "%3C",
+  ">": "%3E",
+  "\\":"%5C",
+  "^": "%5E",
+  "{": "%7B",
+  "|": "%7C",
+  "}": "%7D"
+);
+
+/**
+ * Helper to get URL-escaped inline SVG code
+ */
+@function svg($name) {
+  // Check if icon exists
+  @if not map-has-key($svg-icons, $name) {
+    @error 'icon “#{$name}” does not exists in $svg-icons map';
+    @return false;
+  }
+
+  // Get icon data
+  $icon-map: map-get($svg-icons, $name);
+
+  $escaped-string: "";
+  $unquote-icon: unquote($icon-map);
+  // Loop through each character in string
+  @for $i from 1 through str-length($unquote-icon) {
+    $char: str-slice($unquote-icon, $i, $i);
+
+    // Check if character is in symbol map
+    $char-lookup: map-get($fs-escape-chars, $char);
+
+    // If it is, use escaped version
+    @if $char-lookup != null {
+      $char: $char-lookup;
+    }
+
+    // Append character to escaped string
+    $escaped-string: $escaped-string + $char;
+  }
+
+  // Return inline SVG data
+  @return url("data:image/svg+xml, #{$escaped-string} ");
+}
+
+// :root {
+//     @each $name, $code in $svg-icons {
+//       --svg-#{$name}: #{svg($name)};
+//     }
+//   }
+
+
+@each $name, $code in $svg-icons {
+    .is-icon--#{$name} {
+        //background-image: #{svg($name)};
+        -webkit-mask-image: #{svg($name)}; 
+        mask-image: #{svg($name)};
+    }
+}
+
+
+
+// $i-burger: map-get($fs-svgs, 'chevDown');
+// $i-pins: map-get($fs-svgs, 'pin'); 

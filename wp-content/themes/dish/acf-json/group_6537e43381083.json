@@ -33,6 +33,87 @@
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_6544f83128ec2",
+            "label": "What to Bring",
+            "name": "what_to_bring",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Your Appetite": "Your Appetite",
+                "Closed Toed Shoes": "Closed Toed Shoes"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 1,
+            "save_custom": 1,
+            "layout": "horizontal",
+            "toggle": 1,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_6544f9ee5d300",
+            "label": "Class Requirements",
+            "name": "class_requirements",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Tie Back Hair": "Tie Back Hair",
+                "Remove Large Jewelry": "Remove Large Jewelry",
+                "State Allergies before arriving": "State Allergies before arriving"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 1,
+            "save_custom": 1,
+            "layout": "horizontal",
+            "toggle": 1,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_6544fb7e5fc8b",
+            "label": "Whats Included",
+            "name": "whats_included",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Arrival Drink": "Arrival Drink",
+                "3 Course Meal": "3 Course Meal",
+                "Instructions": "Instructions",
+                "Equipment": "Equipment"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 1,
+            "save_custom": 1,
+            "layout": "horizontal",
+            "toggle": 1,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -53,5 +134,5 @@
     "active": true,
     "description": "Additional Info for Classes",
     "show_in_rest": 0,
-    "modified": 1698188056
+    "modified": 1699019838
 }

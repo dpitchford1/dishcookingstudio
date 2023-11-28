@@ -16,15 +16,14 @@ foreach( $args->events->posts as $event ) {
 
 <article class="event-card">
     
-    <div class="">
-        <a href="<?php echo esc_url( $event_data->event_url ); ?>">
-            <?php if( ! empty( $event_data->image_url ) ) {?>
-                <img class="card--img" src="<?php echo esc_url( $event_data->image_url ) ?>" alt="<?php echo esc_attr( $event_data->em_name ); ?>"><?php
-            } else{?>
-                <img src="<?php echo esc_url( EP_BASE_URL . 'includes/assets/images/dummy_image.png' ) ?>" alt="<?php echo esc_attr( $event_data->em_name ); ?>"><?php
-            }?>
-        </a>
-    </div>
+    <a href="<?php echo esc_url( $event_data->event_url ); ?>">
+        <?php if( ! empty( $event_data->image_url ) ) {?>
+            <img class="card--img" src="<?php echo esc_url( $event_data->image_url ) ?>" alt="<?php echo esc_attr( $event_data->em_name ); ?>"><?php
+        } else{?>
+            <img src="<?php echo esc_url( EP_BASE_URL . 'includes/assets/images/dummy_image.png' ) ?>" alt="<?php echo esc_attr( $event_data->em_name ); ?>"><?php
+        }?>
+    </a>
+    
 
     <?php do_action( 'ep_event_view_before_event_title', $event_data );?>
     
