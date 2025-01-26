@@ -72,7 +72,7 @@ if ( ! function_exists( 'dish_comment' ) ) {
 			)
 		);
 		?>
-		<?php edit_comment_link( __( 'Edit', 'dish' ), '  ', '' ); ?>
+		<?php // edit_comment_link( __( 'Edit', 'dish' ), '  ', '' ); ?>
 		</div>
 		</div>
 		<?php if ( 'div' !== $args['style'] ) : ?>
@@ -262,7 +262,7 @@ if ( ! function_exists( 'dish_homepage_header' ) ) {
 	 * @since 1.0.0
 	 */
 	function dish_homepage_header() {
-		edit_post_link( __( 'Edit this section', 'dish' ), '', '', '', 'button dish-hero__button-edit' );
+		//edit_post_link( __( 'Edit this section', 'dish' ), '', '', '', 'button dish-hero__button-edit' );
 		?>
 		<header class="entry-header">
 			<?php
@@ -464,31 +464,31 @@ if ( ! function_exists( 'dish_post_meta' ) ) {
 	}
 }
 
-if ( ! function_exists( 'dish_edit_post_link' ) ) {
-	/**
-	 * Display the edit link
-	 *
-	 * @since 2.5.0
-	 */
-	function dish_edit_post_link() {
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'dish' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<div class="edit-link">',
-			'</div>'
-		);
-	}
-}
+// if ( ! function_exists( 'dish_edit_post_link' ) ) {
+// 	/**
+// 	 * Display the edit link
+// 	 *
+// 	 * @since 2.5.0
+// 	 */
+// 	function dish_edit_post_link() {
+// 		edit_post_link(
+// 			sprintf(
+// 				wp_kses(
+// 					/* translators: %s: Name of current post. Only visible to screen readers */
+// 					__( 'Edit <span class="screen-reader-text">%s</span>', 'dish' ),
+// 					array(
+// 						'span' => array(
+// 							'class' => array(),
+// 						),
+// 					)
+// 				),
+// 				get_the_title()
+// 			),
+// 			'<div class="edit-link">',
+// 			'</div>'
+// 		);
+// 	}
+// }
 
 if ( ! function_exists( 'dish_post_taxonomy' ) ) {
 	/**

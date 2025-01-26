@@ -10,7 +10,6 @@
 ?>
 </div><!-- .col-full -->
 
-
 <?php do_action( 'dish_before_footer' ); ?>
 
 <!-- start footer -->
@@ -33,7 +32,7 @@
             <div class="desc item">
                 <h4 class="hide-text screen-reader-text">About Dish Cooking Studio</h4>
                 <p class="sm--m footer--heading">The best Cooking Class Experience in Toronto!</p>
-                <p class="footer-excerpt">We're creating a holistic food experience - one that is thoughtful, helpful and flavourful. By giving people the opportunity to cook, eat and shop under one roof, Dish Cooking Studio is a distinctly different neighbourhood culinary destination.</p>
+                <p class="footer-excerpt">Dish Cooking Studio is creating a holistic food experience - one that is thoughtful, helpful and flavourful. By giving people the opportunity to cook, eat and shop under one roof, Dish Cooking Studio is a distinctly different neighbourhood culinary destination.</p>
             </div>
             <div class="loc item">
                 <h4 class="sm--m footer--heading">Find Us In Real Life!</h4>
@@ -71,23 +70,16 @@
                     <li><a href="/class-formats/">Class Formats</a></li>
                     <li><a href="/chefs/">Dish Chefs</a></li>
                     <li><a href="/private-cooking-experiences/">Corporate Events</a></li>
-                    <li><a href="/shop/gift-cards/">Gift Cards</a></li>
-                    <li aria-hidden="true">&mdash;</li>
-                    <li><a href="/about-dish/">About Dish</a></li>
                     <li><a href="/recipe-archive/">Recipes</a></li>
-                    <li><a href="/about-dish/frequently-asked-questions/">FAQ's</a></li>
-                    <li><a href="/private-events/dish-studio-rentals/">Studio Rental</a></li>
+                    <li><a href="/shop/gift-cards/">Gift Cards</a></li>
                 </ul>
             </div>
             <div class="nav2" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
                 <h4 class="xsm--m footer--heading">Shop <span class="hide-text screen-reader-text">At Dish</span></h4>
                 <ul class="no-bullet">
-                    <li><a href="/shop/">Shop</a></li>
-                    <li><a href="/shop/prepared-meals/">Prepared Meals</a></li>
-                    <li><a href="/shop/pantry-essentials/">Pantry Essentials</a></li>
-                    <li><a href="/shop/kitchen-tools/">Kitchen Tools</a></li>
-                    <li><a href="/shop/home-delivery/">Home Delivery</a></li>
-                    <li aria-hidden="true">&mdash;</li>
+                    <li><a href="/about-dish/">About Dish</a></li>
+                    <li><a href="/private-events/dish-studio-rentals/">Studio Rental</a></li>
+                    <li><a href="/about-dish/frequently-asked-questions/">FAQ's</a></li>
                     <li><a href="/about-dish/cancellation-policy">Cancellation Policy</a></li>
                     <li><a href="/about-dish/privacy-policy/">Privacy Policy</a></li>
                     <li><a href="/contact-us/">Contact Us</a></li>

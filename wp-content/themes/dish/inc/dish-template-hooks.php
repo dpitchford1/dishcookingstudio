@@ -64,7 +64,7 @@ add_action( 'dish_loop_post', 'dish_post_taxonomy', 40 );
 add_action( 'dish_loop_after', 'dish_paging_nav', 10 );
 add_action( 'dish_single_post', 'dish_post_header', 10 );
 add_action( 'dish_single_post', 'dish_post_content', 30 );
-add_action( 'dish_single_post_bottom', 'dish_edit_post_link', 5 );
+//add_action( 'dish_single_post_bottom', 'dish_edit_post_link', 5 );
 add_action( 'dish_single_post_bottom', 'dish_post_taxonomy', 5 );
 add_action( 'dish_single_post_bottom', 'dish_post_nav', 10 );
 //add_action( 'dish_single_post_bottom', 'dish_display_comments', 20 );
@@ -80,7 +80,7 @@ add_action( 'dish_post_content_before', 'dish_post_thumbnail', 10 );
  */
 add_action( 'dish_page', 'dish_page_header', 10 );
 add_action( 'dish_page', 'dish_page_content', 20 );
-add_action( 'dish_page', 'dish_edit_post_link', 30 );
+//add_action( 'dish_page', 'dish_edit_post_link', 30 );
 //add_action( 'dish_page_after', 'dish_display_comments', 10 );
 
 /**

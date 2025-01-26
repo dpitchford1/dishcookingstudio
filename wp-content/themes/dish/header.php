@@ -86,7 +86,7 @@
 do_action( 'dish_before_content' );
 ?>
 <div class="fluid cf">
-    <div class="icons-testing">
+    <!-- <div class="icons-testing">
         <h5>Icons in a list, no text</h5>
         <ul>
             <li><a class="is-icon i-lg is-icon--pins" href="">pin</a> - icon, in an anchor, lg size</li>
@@ -99,6 +99,6 @@ do_action( 'dish_before_content' );
             <li><a class="has--pin is-icon--pins" href="">pin</a></li>
         </ul>
 
-    </div>
+    </div> -->
     <?php
     do_action( 'dish_content_top' );
